@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react';
 import NavBar from './components/NavBar';
 
-function Appp() {
+function App() {
   return (
     <React.Fragment className="App">
       <NavBar/>
@@ -11,4 +11,4 @@ function Appp() {
   );
 }
 
-export default Appp;
+export default App;
