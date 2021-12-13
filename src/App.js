@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import NavBar from './components/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBarComponent from './components/NavBar';
 
 function App() {
   return (
     <React.Fragment className="App">
-      <NavBar/>
+      <NavBarComponent/>
     </React.Fragment>
   );
 }
