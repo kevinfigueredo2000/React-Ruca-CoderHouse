@@ -4,7 +4,7 @@ import '../CartWidget.css';
 
 function CartWidget(){
     return (
-            <a href="#" className="text-right"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#" className="text-right" id="carrito"><i class="fas fa-shopping-cart"></i></a>
     )
 }
 export default CartWidget;
