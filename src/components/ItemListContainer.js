@@ -1,19 +1,33 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import ItemCount from "./ItemCount";
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ItemListContainer(){
-        const stylePar = {
-            fontFamily: "Arial",
-            color: "grey",
-            fontSize: 20,
-            marginTop:10
-        }
     return(
-        <Container>
-            <p style={stylePar}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Vel orci porta non pulvinar neque laoreet suspendisse interdum. In massa tempor nec feugiat nisl pretium fusce id velit. Gravida cum sociis natoque penatibus et magnis dis. Iaculis eu non diam phasellus vestibulum lorem. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Elit ut aliquam purus sit. Tristique et egestas quis ipsum suspendisse ultrices. Diam in arcu cursus euismod quis viverra nibh. Integer enim neque volutpat ac tincidunt. Massa vitae tortor condimentum lacinia quis vel eros donec ac.</p>
+        <Container className="text-center">
+            <h1 className="text-center">Productos</h1>
+            <Row>
+                <Col className="card shadow col-sm m-3">
+                    <div><img className="img-fluid" src="../foto1.jpg"></img></div>
+                    <p className="text-center">Producto3</p>
+                    <ItemCount/>
+                </Col>
+                <Col className="card shadow col-sm m-3">
+                    <div><img className="img-fluid" src="../foto2.jpg"></img></div>
+                    <p className="text-center">Producto3</p>
+                    <ItemCount/>
+                </Col>
+                <Col className="card shadow col-sm m-3">
+                    <div><img className="img-fluid" src="../foto3.jpg"></img></div>
+                    <p className="text-center">Producto3</p>
+                    <ItemCount/>
+                </Col>
+            </Row>
         </Container>
-    )
+    );
     }
 
 export default ItemListContainer;
