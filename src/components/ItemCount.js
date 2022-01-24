@@ -1,33 +1,27 @@
 import React from "react";
-import {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import {useState} from "react";
 
-function ItemCount(){
-    const [count, setCount] = useState(1);
-
+function ItemCount({stock, initial}){
+    let [count, setCount] = useState(initial);
+    
     function mas(){
-        setCount( count + 1);
-        if(count >=5){
-            setCount(5);
-        }
+        count < stock? setCount(count +1): setCount(count);
     }
 
     function menos(){
-        setCount( count - 1);
-        if(count <=0){
-            setCount(0);
-        }
+        count > initial? setCount(count -1): setCount(count);
     };
     return(
         <Container>
-            <Row className="mb-3">
-                <Button onClick={()=> menos(count)}>-</Button>
-                    <p className="text-center"> {count} </p>
-                <Button onClick={()=> mas(count)}>+</Button>
+            <Row className="my-3">
+                <Button onClick={menos}>-</Button>
+                    <p>{count}</p>
+                <Button onClick={mas}>+</Button>
             </Row>
         </Container>
     );
