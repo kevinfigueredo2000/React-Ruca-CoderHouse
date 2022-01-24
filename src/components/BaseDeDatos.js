@@ -20,6 +20,6 @@ export const PRODUCTS =[
 ];
 export function getProductos(){
     return new Promise((resolve, reject) =>{
-        setTimeout(()=> resolve(PRODUCTS), 0);
+        setTimeout(()=> resolve(PRODUCTS), 2000);
     })
 }
