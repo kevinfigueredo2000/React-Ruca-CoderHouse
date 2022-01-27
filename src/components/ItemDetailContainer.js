@@ -9,18 +9,17 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import ItemListContainer from "./ItemListContainer";
 
 function ItemDetailContainer(){
     return(
-        <React.Fragment className="App">
+        <React.Fragment>
             <Router>
                 <Navbar/>
                 <Switch>
                     <Route path="/Detalles"/>
                         <ItemDetail/>
                     <Route/>
-                    <Route path="/" exact/>
+                    <Route exact path="/"/>
                         <App/>
                     <Route/>
                 </Switch>

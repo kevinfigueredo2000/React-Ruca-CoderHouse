@@ -19,7 +19,7 @@ function Item({product}){
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">{product.tipodemate}</p>
                     <img className="imagen-card img-thumbnail imag"src={product.img}/>
-                    <Router><Switch><Link className="mt-3 btn btn-secondary" to="/Detalles">Ver detalle</Link></Switch></Router>
+                    <Router><Switch><a className="mt-3 btn btn-secondary" to="/Detalles">Ver detalle</a></Switch></Router>
                     <ItemCount stock={product.stock} initial={1}/>
                 </div>
             </div>
