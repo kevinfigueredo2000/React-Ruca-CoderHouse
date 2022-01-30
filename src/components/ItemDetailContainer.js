@@ -1,30 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 import App from "../App";
 import {Navbar} from 'react-bootstrap/';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetail from "./ItemDetail";
+import {Outlet} from 'react-router-dom';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
   } from "react-router-dom";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { getProductos } from "./BaseDeDatos";
+import {setOutletContext} from "react-dom"
+import {useState} from "react"
 
-function ItemDetailContainer(){
+function ItemDetailContainer(getProductos){
+    const {id} = useParams();
+    const [loading, setLoading] = setOutletContext();
+    const [product, setProduct] = useState(null);
+
+    useEffect(()=>{
+        let mounted = true;
+        setLoading(true);
+        Promise.all([getProductos(id)])
+        .then(results=>{
+            return results
+            let item = results[0]
+            item.description = results[1].plain_text
+            if(mounted){
+                setProduct(item)
+                setTimeout(()=>{
+                    setLoading(false)
+                },3000)
+            }
+        })
+        return () => mounted = false
+    }, [id]);
+
     return(
-        <React.Fragment>
-            <Router>
-                <Navbar/>
-                <Switch>
-                    <Route path="/Detalles"/>
-                        <ItemDetail/>
-                    <Route/>
-                    <Route exact path="/"/>
-                        <App/>
-                    <Route/>
-                </Switch>
-            </Router>
-        </React.Fragment>
+        <div>
+            {product ? <ItemDetail product={product}/> : null}
+        </div>
     );
     }
 
