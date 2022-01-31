@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { Navbar } from 'react-bootstrap';
-import {Outlet} from 'react-router-dom';
+import {Outlet} from 'react-router';
 
 function Layout(){
     const [loading, setLoading] = useState(false);
@@ -8,7 +8,7 @@ function Layout(){
         <div className='App'>
             <Navbar/>
             <Outlet/>
-            {loading ? <Loading/> : null};
+            {loading ? (<p className="text-center">Cargando...</p>): null};
         </div>
     )
 }

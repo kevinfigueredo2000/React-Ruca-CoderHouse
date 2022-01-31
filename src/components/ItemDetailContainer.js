@@ -1,16 +1,8 @@
 import React, { useEffect } from "react";
-import App from "../App";
-import {Navbar} from 'react-bootstrap/';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetail from "./ItemDetail";
 import {Outlet} from 'react-router-dom';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
 import { getProductos } from "./BaseDeDatos";
 import {setOutletContext} from "react-dom"
 import {useState} from "react"
