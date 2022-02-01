@@ -2,7 +2,7 @@
     "productos": [
         {
             "id":1,
-            "name": "Chimuelo",
+            "name": "Groot",
             "price": 110,
             "description": "Descripcion",
             "stock": 60,
@@ -11,7 +11,7 @@
         },
         {
             "id":2,
-            "name": "fe",
+            "name": "PokeBola",
             "price": 120,
             "description": "Descripcion",
             "stock": 20,
@@ -20,7 +20,7 @@
         },
         {
             "id":3,
-            "name": "f",
+            "name": "Chimuelo",
             "price": 180,
             "description": "Descripcion",
             "stock": 50,
@@ -29,7 +29,7 @@
         },
         {
             "id":4,
-            "name": "r",
+            "name": "Stitch",
             "price": 170,
             "description": "Descripcion",
             "stock": 30,
