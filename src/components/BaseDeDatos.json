@@ -1,0 +1,58 @@
+{
+    "productos": [
+        {
+            "id":1,
+            "name": "Brahma Lata",
+            "price": 110,
+            "description": "Lata de Brahma 440cc",
+            "stock": 60,
+            "category":"Cerveza",
+            "img": "https://th.bing.com/th/id/OIP.cSgPhT80SFEqVQuP_RthKwHaHa?pid=ImgDet&rs=1"
+        },
+        {
+            "id":2,
+            "name": "Quilmes Lata",
+            "price": 120,
+            "description": "Lata de Quilmes 440cc",
+            "stock": 20,
+            "category":"Cerveza",
+            "img": "https://rojoynegro.com.ar/pedidos/wp-content/uploads/2020/01/lata-quilmes.jpg"
+        },
+        {
+            "id":3,
+            "name": "Warsteiner",
+            "price": 180,
+            "description": "Botella de Warsteiner 1lts",
+            "stock": 50,
+            "category":"Cerveza",
+            "img": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3100557_f.jpg"
+        },
+        {
+            "id":4,
+            "name": "Heineken",
+            "price": 170,
+            "description": "Botella de Heineken 1lts",
+            "stock": 30,
+            "category":"Cerveza",
+            "img": "https://th.bing.com/th/id/R.5fae3408a521e9abd49f42c11b1c6330?rik=8l3hgM9tvXILeg&riu=http%3a%2f%2fwww.vieille.cl%2fwp-content%2fuploads%2f2016%2f05%2fSin-t%c3%adtulo-172.png&ehk=E7doPRA4%2fbdKf4jX2t9gCee7QW9%2bzw9r6CCLDmtAtp0%3d&risl=&pid=ImgRaw&r=0"
+        },
+        {
+            "id":5,
+            "name": "Smirnoff",
+            "price": 710,
+            "description": "Botella de vodka marca Smirnoff 700Ml",
+            "stock": 30,
+            "category":"Vodka",
+            "img": "https://th.bing.com/th/id/OIP.kTuTtBpHlWCB47rnUALM8QHaHa?pid=ImgDet&rs=1"
+        },
+        {
+            "id":6,
+            "name": "Bacardi",
+            "price": 6500,
+            "description": "Botella de ron marca Bacardi",
+            "stock": 20,
+            "category":"Ron",
+            "img": "https://th.bing.com/th/id/OIP.5lEPZPzvpIwhKyQ4xbHCZgHaHa?pid=ImgDet&rs=1"
+        }
+    ]
+}
