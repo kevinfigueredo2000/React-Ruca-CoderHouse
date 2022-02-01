@@ -2,16 +2,17 @@ import React from "react";
 import {useState} from "react";
 import Item from "./Item";
 import {useEffect} from "react";
-import {getProductos} from "./BaseDeDatos";
 
 function ItemList(){
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        const URL = "http://localhost:3001/productos"
         setIsLoading(true)
-        getProductos()
-        .then((data)=> {setProducts(data)})
+        fetch(URL)
+        .then((response)=> response.json())
+        .then((json) =>setProducts(json))
         .catch((error)=> {console.error(error)})
         .finally(()=> setIsLoading(false))
     }, []);

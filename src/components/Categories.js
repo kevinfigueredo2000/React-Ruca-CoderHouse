@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Categories=()=>{
+function Categories(){
     const [products, setProducts] =useState();
     const [isLoading, setIsLoading] =useState(false)
     useEffect(()=>{
