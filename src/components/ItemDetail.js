@@ -35,6 +35,7 @@ function ItemDetail(){
                     </div>
                 </div>
                 <div className="col-sm-4 card shadow">
+                    <p>Precio:{product.price}</p>
                     <p>
                         Envío gratis
                     </p>

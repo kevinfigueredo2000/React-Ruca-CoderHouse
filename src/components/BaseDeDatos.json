@@ -6,7 +6,7 @@
             "price": 110,
             "description": "Descripcion",
             "stock": 60,
-            "category":"Mate",
+            "tipodemate":"Mate",
             "img": "foto1.jpg"
         },
         {
