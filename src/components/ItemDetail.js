@@ -36,7 +36,7 @@ function ItemDetail(){
                     </div>
                 </div>
                 <div className="col-sm-4 card shadow mt-3 ">
-                    <h1 className="card-title mt-3">{product.name}</h1>
+                    <h1 className="card-title mt-3">{product.tipodemate}-{product.name}</h1>
                     <h2 className="mt-3">${product.price}</h2>
                     <p className="mt-5">
                     <i class="fas fa-truck"></i> Envío gratis
@@ -45,7 +45,8 @@ function ItemDetail(){
                         Stock disponible: <bold>{product.stock}</bold>
                     </p>
                         <ItemCount stock={product.stock} initial={1}/>
-                    <button className="m-auto col-sm-6 mb-5">Comprar ahora</button>
+                    <button className="m-auto col-sm-6">Comprar ahora</button>
+                    <button className="m-auto col-sm-6">Agregar al carrito</button>
                 </div>
             </Row>
         </Container>
