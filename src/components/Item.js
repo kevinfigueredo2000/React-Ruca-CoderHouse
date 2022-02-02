@@ -13,8 +13,9 @@ function Item({product}){
                     <h5 className="card-title text-center">{product.name}</h5>
                     <p className="card-text text-center">{product.tipodemate}</p>
                     <img className="img-thumbnail img-fluid text-center" src={product.img} alt={product.name}/>
-                    <Button className="mt-3 btn btn-secondary col-sm-6 m-auto" onClick={()=>navigate(`/productos/${product.id}`)}>Ver detalle</Button>
-                    <ItemCount stock={product.stock} initial={1}/>
+                    <div className="text-center">
+                    <Button className="mt-3 btn btn-secondary col-sm-6" onClick={()=>navigate(`/productos/${product.id}`)}>Ver detalle</Button>
+                    </div>
                 </div>
             </div>
         </Container>

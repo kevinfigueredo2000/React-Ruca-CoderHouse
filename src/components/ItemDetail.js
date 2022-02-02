@@ -1,6 +1,6 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
-import {Container,Row, Button} from 'react-bootstrap/';
+import {Container,Row} from 'react-bootstrap/';
 import ItemCount from "./ItemCount";
 import { useParams } from "react-router-dom";
 import {useState, useEffect} from "react";
@@ -26,26 +26,26 @@ function ItemDetail(){
                     <div className="card mt-3 mx-3 shadow carta">
                         <div className="card-body">
                             <img className="imagen-card img-thumbnail imag col-sm-6" src={product.img} alt={product.name}/>
-                            <div className="col-sm-6">   
-                                <h5 className="card-title">{product.name}</h5>
-                                <p>Tipo de mate:{product.tipodemate}</p>
-                                <p className="card-text">{product.description}</p>
+                            <hr/>
+                            <div>   
+                                <p><h4>Tipo de mate:</h4>{product.tipodemate}</p>
+                                <hr/>
+                                <p className="card-text"><h4>Descripcion:</h4>{product.description}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-4 card shadow">
-                    <p>Precio:{product.price}</p>
-                    <p>
-                        Envío gratis
+                <div className="col-sm-4 card shadow mt-3 ">
+                    <h1 className="card-title mt-3">{product.name}</h1>
+                    <h2 className="mt-3">${product.price}</h2>
+                    <p className="mt-5">
+                    <i class="fas fa-truck"></i> Envío gratis
                     </p>
-                    <p>
-                        Stock disponible: {product.stock}
+                    <p className="mt-3">
+                        Stock disponible: <bold>{product.stock}</bold>
                     </p>
-                    <>
-                        <ItemCount stock={product.stock}/>
-                    </>
-                    <Button value="Comprar ahora"/>
+                        <ItemCount stock={product.stock} initial={1}/>
+                    <button className="m-auto col-sm-6 mb-5">Comprar ahora</button>
                 </div>
             </Row>
         </Container>
