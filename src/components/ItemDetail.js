@@ -3,12 +3,23 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import {Container,Row} from 'react-bootstrap/';
 import ItemCount from "./ItemCount";
 import { useParams } from "react-router-dom";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
+import './ItemDetail.css'
+import { CartContext } from "./CartContext";
+import { useCart } from "./CartContext";
 
 function ItemDetail(){
+
+    const { cart, addItem } = useCart();
+
+    function handleClick(){
+        addItem(product);
+    }
     const { productID }  = useParams();
     const [product, setProduct] = useState();
+    const [count, setCount] = useState(0);
     const [isLoading, setIsLoading] = useState(false)
+
     useEffect(()=>{
         const URL = `http://localhost:3001/productos/${productID}`;
         setIsLoading(true)
@@ -25,17 +36,17 @@ function ItemDetail(){
                 <div className="col-sm-8">
                     <div className="card mt-3 mx-3 shadow carta">
                         <div className="card-body">
-                            <img className="imagen-card img-thumbnail imag col-sm-6" src={product.img} alt={product.name}/>
+                            <img className="imagen-card shadow img-thumbnail imag col-sm-6 my-5" src={product.img} alt={product.name}/>
                             <hr/>
                             <div>   
                                 <p><h4>Tipo de mate:</h4>{product.tipodemate}</p>
                                 <hr/>
-                                <p className="card-text"><h4>Descripcion:</h4>{product.description}</p>
+                                <p><h4>Descripcion:</h4>{product.description}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-4 card shadow mt-3 ">
+                <div className="col-sm-4 card shadow mt-3" id="cardDerecha">
                     <h1 className="card-title mt-3">{product.tipodemate}-{product.name}</h1>
                     <h2 className="mt-3">${product.price}</h2>
                     <p className="mt-5">
@@ -45,8 +56,8 @@ function ItemDetail(){
                         Stock disponible: <bold>{product.stock}</bold>
                     </p>
                         <ItemCount stock={product.stock} initial={1}/>
-                    <button className="m-auto col-sm-6">Comprar ahora</button>
-                    <button className="m-auto col-sm-6">Agregar al carrito</button>
+                    <button className="mx-auto my-3 col-sm-6">Comprar ahora</button>
+                    <button onClick={handleClick} className="mx-auto my-3 col-sm-6">Agregar al carrito</button>
                 </div>
             </Row>
         </Container>

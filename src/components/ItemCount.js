@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import {useState} from "react";
+import { useState } from "react";
 
 function ItemCount({stock, initial}){
     let [count, setCount] = useState(initial);
@@ -19,7 +19,7 @@ function ItemCount({stock, initial}){
     return(
         <Container>
             <Row className="my-3">
-                <Button className="col-sm-2 m-auto" onClick={menos}>-</Button>  <p className="col-sm-1 my-auto">{count}</p>  <Button className="col-sm-2 m-auto" onClick={mas}>+</Button>
+                <Button className="col-sm-2 m-auto" onClick={menos}>-</Button>  <p className="col-sm-2 my-auto">{count}</p>  <Button className="col-sm-2 m-auto" onClick={mas}>+</Button>
             </Row>
         </Container>
     );

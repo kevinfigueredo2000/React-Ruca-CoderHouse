@@ -3,6 +3,7 @@ import NavBar from 'react-bootstrap/NavBar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import CartWidget from './CartWidget';
+import { CartProvider } from "./CartContext";
 
 function NavBarComponent(){
     return (
@@ -13,7 +14,7 @@ function NavBarComponent(){
                     <Nav.Link href="#home">Home</Nav.Link>
                     <Nav.Link href="#features">Features</Nav.Link>
                     <Nav.Link href="#pricing">pricing</Nav.Link>
-                    <CartWidget/>
+                    <CartProvider><CartWidget/></CartProvider>
                 </Nav>
             </Container>
         </NavBar>

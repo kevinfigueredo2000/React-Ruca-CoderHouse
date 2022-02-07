@@ -4,6 +4,7 @@ import Item from "./Item";
 import {useEffect} from "react";
 
 function ItemList(){
+    
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -15,7 +16,8 @@ function ItemList(){
         .then((json) =>setProducts(json))
         .catch((error)=> {console.error(error)})
         .finally(()=> setIsLoading(false))
-    }, []);
+    },[]);
+
     return(
         <div className="row">
             {isLoading? (<p className="text-center">Cargando...</p>): (products.map((product)=>(
