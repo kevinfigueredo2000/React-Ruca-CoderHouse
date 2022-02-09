@@ -8,16 +8,14 @@ import './ItemDetail.css'
 import { useCart } from "./CartContext";
 
 function ItemDetail(){
-
     const { cart, addItem } = useCart();
+    const { productID }  = useParams();
+    const [product, setProduct] = useState();
+    const [isLoading, setIsLoading] = useState(false);
 
     function handleClick(){
         addItem(product);
     }
-    const { productID }  = useParams();
-    const [product, setProduct] = useState();
-    const [count, setCount] = useState(0);
-    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(()=>{
         const URL = `http://localhost:3001/productos/${productID}`;

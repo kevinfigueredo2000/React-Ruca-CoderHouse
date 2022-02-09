@@ -2,7 +2,7 @@ import { useState, createContext, useContext } from "react";
 
 export const CartContext = createContext([]);
 
-export const CartProvider = ({children})=>{
+export const CartProvider = ({ children })=>{
 
     const [cart, setCart] = useState([])
 
@@ -14,10 +14,10 @@ export const CartProvider = ({children})=>{
         setCart((prev)=> prev.filter((element)=> element.item.id !== id));
     }
     function clear(){
-        setCart(0);
+        cart = setCart(0);
     }
     return(
-        <CartContext.Provider value={(addItem, removeItem, clear)}>
+        <CartContext.Provider value={{ addItem, removeItem, clear }}>
             {children}
         </CartContext.Provider>
     )
