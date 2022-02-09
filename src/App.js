@@ -12,7 +12,7 @@ import { CartContext } from "./components/CartContext";
 function App() {
   return (
     <Router>
-      <CartContext>
+      <CartContext.Provider>
         <NavBar/>
         <Routes>
           <Route path="/">
@@ -29,7 +29,7 @@ function App() {
             <Route/>
           </Route>
         </Routes>
-      </CartContext>
+      </CartContext.Provider>
     </Router>
   );
 }

@@ -10,7 +10,7 @@ function CartWidget(){
     return (
             <a style={{position: "relative", marginLeft: 1000}} 
                 href="/#" className="text-right" id="carrito">
-                <i class="fas fa-shopping-cart"></i>{cartItem()}
+                <i class="fas fa-shopping-cart"></i>{ cartItem }
             </a>
     )
 }

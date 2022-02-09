@@ -5,7 +5,6 @@ import ItemCount from "./ItemCount";
 import { useParams } from "react-router-dom";
 import {useState, useEffect, useContext} from "react";
 import './ItemDetail.css'
-import { CartContext } from "./CartContext";
 import { useCart } from "./CartContext";
 
 function ItemDetail(){

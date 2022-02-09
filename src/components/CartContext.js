@@ -6,10 +6,6 @@ export const CartProvider = ({children})=>{
 
     const [cart, setCart] = useState([])
 
-    function cartItems(){
-        
-    }
-
     function addItem(product, count){
         const newItem = {product, count}
         setCart((prevState)=> [...prevState, newItem]);
@@ -21,7 +17,7 @@ export const CartProvider = ({children})=>{
         setCart(0);
     }
     return(
-        <CartContext.Provider value={(addItem, cartItems, removeItem, clear)}>
+        <CartContext.Provider value={(addItem, removeItem, clear)}>
             {children}
         </CartContext.Provider>
     )
