@@ -1,0 +1,40 @@
+{
+    "productos": [
+        {
+            "id":1,
+            "name": "Groot",
+            "price": 710,
+            "description": "Esta es una descripcion...",
+            "stock": 60,
+            "category":"Mates",
+            "img": "https://th.bing.com/th/id/R.576229021314835dd79e0751630b2ae7?rik=k3R7u%2fSzneix2Q&riu=http%3a%2f%2fd26lpennugtm8s.cloudfront.net%2fstores%2f806%2f999%2fproducts%2faccesorios-fotocaja-31-0955aa3cf1d57c8ade15629449274340-640-0.jpg&ehk=AHKGsC9Dge0MDZzBSpdmX0O1GuNpdr8Yre4HPEcXEO0%3d&risl=&pid=ImgRaw&r=0"
+        },
+        {
+            "id":2,
+            "name": "PokeBola",
+            "price": 710,
+            "description": "Esta es una descripcion...",
+            "stock": 20,
+            "category":"Mates",
+            "img": "https://d26lpennugtm8s.cloudfront.net/stores/806/999/products/accesorios-fotocaja-61-2637d931bfd2cf9f0b15629457822424-640-0.jpg"
+        },
+        {
+            "id":3,
+            "name": "Chimuelo",
+            "price": 710,
+            "description": "Esta es una descripcion...",
+            "stock": 50,
+            "category":"Mates",
+            "img": "https://d26lpennugtm8s.cloudfront.net/stores/806/999/products/mate-3d-disney-chimuelo-como-entrenar-a-tu-dragon-toothless-fotocaja-tienda-geek-cordoba-21-f76fe38ea1837e71b015764990093148-640-0.jpg"
+        },
+        {
+            "id":4,
+            "name": "Stitch",
+            "price": 710,
+            "description": "Esta es una descripcion...",
+            "stock": 30,
+            "category":"Mates",
+            "img": "https://files.cults3d.com/uploaders/14392201/illustration-file/46346506-7da8-4f59-bf41-2c001c1141b4/Stitch%20(2).png"
+        }
+    ]
+}
