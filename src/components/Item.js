@@ -1,29 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import {useState, useEffect} from "react";
-import ItemCount from "./ItemCount";
-import ItemDetailContainer from "./ItemDetailContainer";
-import React from "react";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
-import ItemDetail from "./ItemDetail";
+import {Container, Button} from 'react-bootstrap/';
+import {useNavigate} from "react-router";
 
 function Item({product}){
+    const navigate = useNavigate();
+
     return(
-        <>
-            <div className="card mt-3 mx-2 shadow-sm">
+        <Container>
+            <div className="card mt-3 shadow-sm col">
                 <div className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">{product.tipodemate}</p>
-                    <img className="imagen-card img-thumbnail imag"src={product.img}/>
-                    <Router><Switch><a className="mt-3 btn btn-secondary" to="/Detalles">Ver detalle</a></Switch></Router>
-                    <ItemCount stock={product.stock} initial={1}/>
+                    <h5 className="card-title text-center">{product.name}</h5>
+                    <p className="card-text text-center">{product.tipodemate}</p>
+                    <img className="img-thumbnail img-fluid text-center" src={product.img} alt={product.name}/>
+                    <div className="text-center">
+                        <Button className="mt-3 btn btn-secondary col-sm-6" onClick={()=>navigate(`/productos/${product.id}`)}>Ver detalle</Button>
+                    </div>
                 </div>
             </div>
-        </>
+        </Container>
     );
 }
 

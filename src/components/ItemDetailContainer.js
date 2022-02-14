@@ -1,31 +1,14 @@
-import React from "react";
-import App from "../App";
-import {Navbar} from 'react-bootstrap/';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemDetail from "./ItemDetail";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
+import ItemDetail from "./ItemDetail"
 
 function ItemDetailContainer(){
     return(
-        <React.Fragment>
-            <Router>
-                <Navbar/>
-                <Switch>
-                    <Route path="/Detalles"/>
-                        <ItemDetail/>
-                    <Route/>
-                    <Route exact path="/"/>
-                        <App/>
-                    <Route/>
-                </Switch>
-            </Router>
-        </React.Fragment>
-    );
-    }
-
+        <div className="container">
+            <div className="row">
+                <ItemDetail  className="col-12" />
+            </div>
+        </div>
+        
+    )
+}
 export default ItemDetailContainer;
