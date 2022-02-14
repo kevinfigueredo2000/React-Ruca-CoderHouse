@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import ItemDetail from "./ItemDetail"
+import ItemDetail from "../ItemDetail"
 
 function ItemDetailContainer(){
     return(

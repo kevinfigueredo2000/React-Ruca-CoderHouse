@@ -1,8 +1,9 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
-import ItemList from "./ItemList";
+import "../ItemListContainer/ItemListContainer.css"
+import ItemList from "../ItemList/ItemList";
 
-function ItemListContainer(){
+const ItemListContainer =()=>{
     return(
         <ItemList/>
     );

@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Categories(){
+const Categories=()=>{
     const [products, setProducts] =useState();
     const [isLoading, setIsLoading] =useState(false)
     useEffect(()=>{
@@ -15,6 +15,7 @@ function Categories(){
     }, []);
     if(isLoading || !products) return <p className="text-center" style={{fontSize:"30px"}}>Cargando...</p>
     return(
+        
         <>
             {products.map((product)=>(
                     <div className="col-12 text-center" key={product.id}>

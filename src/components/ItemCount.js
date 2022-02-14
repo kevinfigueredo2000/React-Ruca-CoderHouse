@@ -1,29 +1,19 @@
-import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import { useState } from "react";
-
-function ItemCount({stock, initial}){
-    let [count, setCount] = useState(initial);
-    
-    function mas(){
-        count < stock? setCount(count +1): setCount(count);
+import { useEffect, useState } from "react";
+export const ItemCount =({sumar, restar, disabled, setCounter ,counter})=>{
+    const tamaño ={
+        width:"250px",
+        marginLeft: "auto",
+        marginRight: "auto"
     }
 
-    function menos(){
-        count > initial? setCount(count -1): setCount(count);
-    };
-    return(
-        <Container>
-            <Row className="my-3">
-                <Button className="col-sm-2 m-auto" onClick={menos}>-</Button>  <p className="col-sm-2 my-auto">{count}</p>  <Button className="col-sm-2 m-auto" onClick={mas}>+</Button>
-            </Row>
-        </Container>
+    return(<>
+        <div className="row mb-2" style={tamaño} id="divContador">
+            <button className="btn btn-primary col-sm-2 m-auto" id="restar" onClick={restar}>-</button>
+            <p  className="text-center col-sm-2 my-auto">{counter}</p>
+            <button className="btn btn-primary col-sm-2 m-auto"  id="sumar" onClick={sumar} disabled={disabled}>+</button>
+        </div>
+        
+    </>
     );
-}
     
-
-export default ItemCount;
+}
