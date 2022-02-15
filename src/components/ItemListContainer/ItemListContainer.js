@@ -1,11 +1,11 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
-import "../ItemListContainer/ItemListContainer.css"
 import ItemList from "../ItemList/ItemList";
+import { Container } from "react-bootstrap";
 
 const ItemListContainer =()=>{
     return(
-        <ItemList/>
+        <Container><ItemList/></Container>
     );
 }
 export default ItemListContainer;

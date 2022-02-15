@@ -1,14 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import ItemDetail from "../ItemDetail"
-
-function ItemDetailContainer(){
+import { ItemDetail } from "../itemDetail/ItemDetail"
+export const ItemDetailContainer =()=>{
     return(
-        <div className="container">
-            <div className="row">
-                <ItemDetail  className="col-12" />
-            </div>
-        </div>
-        
+        <ItemDetail/>
     )
 }
-export default ItemDetailContainer;

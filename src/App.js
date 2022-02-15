@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { ItemDetail } from "./components/itemDetail/ItemDetail";
-import NotFoundPage from "./components/NotFoundPage";
+import NotFoundPage from "./components/notFoundPage";
 import Categories from "./components/Categories";
 import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
