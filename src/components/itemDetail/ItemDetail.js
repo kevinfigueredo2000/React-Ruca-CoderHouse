@@ -18,18 +18,17 @@ export const ItemDetail =()=>{
     const [isLoading, setIsLoading] =useState(false)
     
     useEffect(()=>{
-        //const db = getFirestore() 
-        //const productCollection = db.collection("productos");
-        // const getDataFromFirestore = async ()=>{
-        //const response = await productCollection.get();
-        //}
+        const db = getFirestore() 
+        const productCollection = db.collection("items");
+        const selectedProduct = productCollection.doc(productID);
 
-        const URL = `http://localhost:3001/productos/${productID}`;
-        setIsLoading(true)
-        fetch(URL)
-        .then((res) => res.json())
-        .then((data) => setProduct(data))
-        .finally(()=> setIsLoading(false))
+        setIsLoading(true);
+        selectedProduct
+        .get()
+        .then((response)=>{
+        setProduct({...response.data(), id: response.id})
+    })
+        .finally(()=> setIsLoading(false));
     }, [productID]);
 
     const handleClick=()=>{
@@ -58,12 +57,13 @@ export const ItemDetail =()=>{
                 <div className="shadow card mt-5 col-sm-8">
                     <div className="card-body row">
                         <div className="col-sm-12">
-                            <img className="imagen-card img-thumbnail" src={product.img} alt={product.name}/>
-                            <p className="card-text">{product.description}</p>
+                            <img className="img-thumbnail img-fluid" src={product.img} alt={product.name}/>
+                            <hr/>
+                                <p className="card-text"><h4>Descripción: </h4>{product.description}</p>
                         </div>
                     </div>
                 </div>
-                <div className="shadow text-center card mt-5 col-sm-4">
+                <div className="shadow text-center card mt-5 col-sm-3">
                     <div className="card-body row">
                         <div className=" col-sm-12">
                             <h5 className="card-title">{product.name}</h5>
@@ -76,13 +76,14 @@ export const ItemDetail =()=>{
                     {counter === product.stock && <div className="alert alert-danger" role="alert" style={{marginLeft:"auto", marginRight:"auto", marginTop:"10px"}}>Llegaste al limite de stock!</div>}
                     <div className="mt-3 row">
                         <div className="col-sm-2 card-body">
-                        <Link to="/cart"><button className="btn btn-primary" style={{width:"auto"}}>Comprar ahora</button></Link>
+                            <button onClick={handleClick} className="btn" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa"}}>Agregar al carrito</button>
                         </div>
                     </div>
                     <div className="mb-3 row">
                         <div className="col-sm-2 card-body">
-                            <button onClick={handleClick} className="btn" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa", width:"auto"}}>Agregar al carrito</button>
+                        <Link to="/cart"><button className="btn btn-primary">Comprar ahora</button></Link>
                         </div>
+                        
                     </div>
                 </div>
             </Row>

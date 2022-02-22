@@ -1,16 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css"
+import { Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"
 
 export const Item =({product})=>{
     let navigate = useNavigate();
     return(
-            <div className="card mt-3 mx-3 shadow">
-                <div className="card-body text-center">
-                    <img className="imagen-card img-thumbnail img-fluid" src={product.img} alt={product.name}/>
-                    <h5 className="card-title mt-3">{product.name}</h5>
-                    <button onClick={()=>navigate(`/productos/${product.id}`)} className="btn btn-primary mb-3">Ver detalle</button>
-                </div>
+        <div className="card mt-3 shadow">
+            <div className="card-body text-center">
+                <img className="imagen-card img-thumbnail img-fluid" src={product.img} alt={product.name}/>
+                <h5 className="card-title mt-3">{product.name}</h5>
+                <button onClick={()=>navigate(`/productos/${product.id}`)} className="btn btn-primary mb-3">Ver detalle</button>
             </div>
-            
+        </div>
     );
 }
