@@ -1,6 +1,7 @@
 import "../CartWidget/CartWidget.css"
 import "bootstrap/dist/css/bootstrap.css"
 import { useCart } from "../../context/CartContext";
+import React  from 'react';
 
 function CartWidget ({Cart}){
     const {cantidad} = useCart();

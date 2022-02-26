@@ -9,6 +9,7 @@ import NotFoundPage from "./components/notFoundPage";
 import Categories from "./components/Categories";
 import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path='*' element={<NotFoundPage/>} />
           </Route>
         </Routes>
+        <Footer/>
       </Router>
     </CartProvider>
   );

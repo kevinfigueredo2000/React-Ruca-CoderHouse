@@ -4,6 +4,7 @@ import Cart from "../images/Cart.png"
 import { Link } from "react-router-dom";
 import { Form, FormControl, InputGroup } from "react-bootstrap";
 import { Search } from 'react-bootstrap-icons';
+import React  from 'react';
 
 
 function NavBar(){
@@ -11,15 +12,12 @@ function NavBar(){
         color: "white",
         fontSize: "30px"
     }
-    let navBarStyle = {
-        backgroundColor: "#1f1f1f"
-    }
     let vinculo={
         color: "white",
         textDecorationLine: "none",
     }
     return(
-        <div className="flexbox py-2" style={navBarStyle}>
+        <div className="flexbox py-2 bg-dark" >
             <div className="row"> 
                 <div className="col-sm-1" style={{marginRight:"8vh", marginLeft:"7vh"}}>
                     <Link to="/" style={{textDecoration:"none"}}><h1 style={nombreH1}>Ruca</h1></Link>

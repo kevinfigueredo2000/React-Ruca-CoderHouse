@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import React  from 'react';
+
 export const ItemCount =({sumar, restar, disabled, setCounter ,counter})=>{
     const tamaño ={
         width:"250px",

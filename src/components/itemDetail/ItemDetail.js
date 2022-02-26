@@ -5,6 +5,9 @@ import { Link, useParams } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { getFirestore } from "../../firebase";
 import { ItemCount } from "../ItemCount";
+import React  from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTruck } from '@fortawesome/free-solid-svg-icons'
 
 export const ItemDetail =()=>{
     const fuentePrecio ={
@@ -54,13 +57,13 @@ export const ItemDetail =()=>{
     return(
         <Container>
             <Row>
-                <div className="shadow card mt-5 col-sm-8">
+                <div className="shadow card mt-5 col-sm-8 mx-auto">
                     <div className="card-body row">
-                        <div className="col-sm-12">
-                            <img className="img-thumbnail img-fluid" src={product.img} alt={product.name}/>
-                            <hr/>
-                                <p className="card-text"><h4>Descripción: </h4>{product.description}</p>
+                        <div className="col-sm-12 text-center">
+                            <img className="img-fluid" style={{height: 400}} src={product.img} alt={product.name}/>
                         </div>
+                        <hr className="my-3" />
+                        <p className="card-text"><h4>Descripción: </h4>{product.description}</p>
                     </div>
                 </div>
                 <div className="shadow text-center card mt-5 col-sm-3">
@@ -69,6 +72,7 @@ export const ItemDetail =()=>{
                             <h5 className="card-title">{product.name}</h5>
                             <p className="card-text">Stock disponible: {product.stock}</p>
                             <p style={fuentePrecio}><b>${product.price}</b></p>
+                            <p><FontAwesomeIcon icon={faTruck} style={sp}/>Envio gratis a todo el pais</p>
                         </div>
                     </div>
 

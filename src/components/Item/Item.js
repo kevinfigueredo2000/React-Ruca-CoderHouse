@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"
+import React  from 'react';
 
 export const Item =({product})=>{
     let navigate = useNavigate();

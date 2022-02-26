@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Link } from "react-router-dom";
+import React  from 'react';
+
 const NotFoundPage =()=>{
     return(
     <div className="text-center mt-5">

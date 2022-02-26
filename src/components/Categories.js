@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import React  from 'react';
 
 const Categories=()=>{
     const [products, setProducts] =useState();
