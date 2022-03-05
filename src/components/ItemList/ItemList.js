@@ -23,7 +23,7 @@ function ItemList (){
     return(
         <>
             <Row>
-                {isLoading? (<p className="text-center">Cargando...</p>): (data.map((product)=>(
+                {isLoading? <p className="text-center">Cargando...</p> : (data.map((product)=>(
                         <div className="col-sm" key={product.id}>
                             <Item key={product.id} product={product} id={product.id}/>
                         </div>

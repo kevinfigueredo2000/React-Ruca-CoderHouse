@@ -13,6 +13,10 @@ export const ItemDetail =()=>{
     const fuentePrecio ={
         fontSize: "20px"
     }
+    let sp = {
+        fontSize: 25,
+        color: "white"
+    }
     const { addItem } = useCart();
     const [disabled, setDisabled] = useState(false);
     const [counter, setCounter] = useState(1);

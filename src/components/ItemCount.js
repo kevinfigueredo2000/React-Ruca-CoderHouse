@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import React  from 'react';
 
 export const ItemCount =({sumar, restar, disabled, setCounter ,counter})=>{
@@ -17,5 +16,4 @@ export const ItemCount =({sumar, restar, disabled, setCounter ,counter})=>{
         
     </>
     );
-    
 }

@@ -27,7 +27,7 @@ export const CartProvider = ({ children })=>{
     
     const calcularTotal=()=>{
         const preTotal = cart.map(x=>x.price * x.quantity);
-        const total = 0;
+        let total = 0;
         for(let elemento of preTotal){
             total = total + elemento;
         }

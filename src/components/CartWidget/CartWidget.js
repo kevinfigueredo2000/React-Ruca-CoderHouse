@@ -6,7 +6,7 @@ import React  from 'react';
 function CartWidget ({Cart}){
     const {cantidad} = useCart();
     return(
-        <><img className=" cart" src={Cart} alt="cart" /><span className="position-absolute top-20 start-70 translate-middle badge rounded-pill bg-danger">{cantidad}</span></>
+        <><img className=" cart" src={Cart} alt="cart" />{cantidad === 0 ?  "" : <span className="position-absolute top-20 start-70 translate-middle badge rounded-pill bg-danger">{cantidad}</span>}</>
     );
 }
 export default CartWidget;

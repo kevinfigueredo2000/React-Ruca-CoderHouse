@@ -15,7 +15,7 @@ export const Etiquetas=()=>{
                                 <button className="btn btn-primary">Ver más</button>
                             </div>
                             <div className="col-sm">
-                                <img className="img-fluid imgsRandom" src="https://http2.mlstatic.com/termos-thermos-pack-2-liq-color-1lt-acero-inoxidable-surtido-D_NQ_NP_631127-MLC26776791371_022018-F.jpg"/>
+                                <img className="img-fluid imgsRandom" alt="imgsRandom" src="https://http2.mlstatic.com/termos-thermos-pack-2-liq-color-1lt-acero-inoxidable-surtido-D_NQ_NP_631127-MLC26776791371_022018-F.jpg"/>
                             </div>
                         </Row>
                     </div>
@@ -27,7 +27,7 @@ export const Etiquetas=()=>{
                                 <button className="btn btn-primary">Ver más</button>
                             </div>
                             <div className="col-sm">
-                                <img className="imgsRandom img-fluid" src='https://th.bing.com/th/id/OIP.nISUUNHS1zyJaJ2vn2JCnwHaHh?pid=ImgDet&rs=1'/>
+                                <img className="imgsRandom img-fluid" alt="imgsRandom" src='https://th.bing.com/th/id/OIP.nISUUNHS1zyJaJ2vn2JCnwHaHh?pid=ImgDet&rs=1'/>
                             </div>
                         </Row>
                     </div>
