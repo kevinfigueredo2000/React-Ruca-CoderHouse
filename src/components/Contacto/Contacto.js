@@ -10,8 +10,8 @@ export const Contacto=()=>{
         color: "black"
     }
     return(
-        <Container>
-            <h1>Contacto</h1>
+        <Container className="mt-3">
+            <h1 className="mt-3">Contacto</h1>
             <Row>
                 <div className="col-sm-4">
                     <span className="col-sm-12">Horarios de atención telefónica de 9 a 17hs, de Lunes a viernes</span><br/>

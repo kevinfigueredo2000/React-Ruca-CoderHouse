@@ -21,16 +21,16 @@ function Footer(){
                 </Row>
                 <Row>
                     <div className="col-sm-1 mt-2">
-                        <FontAwesomeIcon icon={faTwitter} style={sp}/>
+                        <a href='https://twitter.com/home'><FontAwesomeIcon icon={faTwitter} style={sp}/></a>
                     </div>
                     <div className="col-sm-1 mt-2">
-                        <FontAwesomeIcon icon={faWhatsapp} style={sp}/>
+                        <a href='https://web.whatsapp.com/'><FontAwesomeIcon icon={faWhatsapp} style={sp}/></a>
                     </div>
                     <div className="col-sm-1 mt-2">
-                        <FontAwesomeIcon icon={faInstagram} style={sp}/>
+                       <a href='https://www.instagram.com/'><FontAwesomeIcon icon={faInstagram} style={sp}/></a>
                     </div>
                     <div className="col-sm-3 mt-2">
-                        <FontAwesomeIcon icon={faFacebook} style={sp}/>
+                        <a href='https://www.facebook.com/'><FontAwesomeIcon icon={faFacebook} style={sp}/></a>
                     </div>
                     <div className="col-sm-3 m-auto">
                         <a style={letras}>Mail: Ruca@mail.com</a>

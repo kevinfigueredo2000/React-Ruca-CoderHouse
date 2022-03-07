@@ -1,6 +1,6 @@
 import React  from 'react';
 
-export const ItemCount =({sumar, restar, disabled, setCounter ,counter})=>{
+export const ItemCount =({sumar, restar, disabled ,counter})=>{
     const tamaño ={
         width:"250px",
         marginLeft: "auto",

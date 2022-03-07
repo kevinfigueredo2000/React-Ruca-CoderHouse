@@ -13,6 +13,7 @@ const ItemListContainer =()=>{
             <Container>
                 <ItemList/>
                 <Etiquetas/>
+                <ItemList/>
             </Container>
         </>
     );

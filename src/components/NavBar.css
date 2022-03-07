@@ -1,0 +1,27 @@
+.nombreH1{
+    color: white;
+    font-size: 30px;
+    text-decoration-line: none !important;
+
+}
+.items{
+    text-decoration:none;
+    color:black;
+}
+.vinculo{
+    color: white;
+    text-decoration: none;
+}
+
+.margenes{
+    margin-right:8vh; 
+    margin-left:7vh;
+}
+
+.margenNav{
+    margin-left:-45px;
+}
+
+.cart{
+    margin-left:13vh;
+}

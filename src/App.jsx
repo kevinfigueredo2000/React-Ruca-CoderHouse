@@ -12,6 +12,7 @@ import { CartProvider } from "./context/CartContext";
 import Footer from "./components/Footer";
 import { SNosotros } from "./components/SNosotros/SNosotros";
 import { Contacto } from "./components/Contacto/Contacto";
+import ThankYouPage from "./components/ThankYouPage/ThankYouPage";
 
 function App() {
   return (
@@ -26,10 +27,16 @@ function App() {
                 <Route path=":productID" element={<ItemDetail/>} />
               </Route>
             <Route/>
+            <Route index element={<Categories/>}/>
+                <Route path="categorias/:categoryID">
+                  <Route index element={<Categories/>} />
+                </Route>
+            <Route/>
             <Route path="sobre-nosotros" element={<SNosotros/>}/>
             <Route index element={<Categories/>} path="categories"/>
             <Route path="contacto" element={<Contacto/>}/>
-            <Route path="categorias" element={<Categories/>}/>
+            
+            <Route path="thanks/:orderId" element={<ThankYouPage/>} />
             <Route path="cart" element={<Cart/>} />
             <Route path='*' element={<NotFoundPage/>} />
           </Route>

@@ -1,12 +1,11 @@
 import "bootstrap/dist/css/bootstrap.css";
 import CartWidget from "./CartWidget/CartWidget.js";
 import Cart from "../images/Cart.png"
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Dropdown, Form, FormControl, InputGroup } from "react-bootstrap";
 import { Search } from 'react-bootstrap-icons';
 import React, { useEffect, useState }  from 'react';
-import { getFirestore } from "../firebase/index";
-
+import { getFirestore } from "../firebase";
 
 function NavBar(){
     let nombreH1={
@@ -17,38 +16,34 @@ function NavBar(){
         color: "white",
         textDecorationLine: "none",
     }
-
-    const [product, setProduct] =useState({});
-    useEffect(()=>{
-        const db = getFirestore() 
-        const productCollection = db.collection("items");
-        const selectedProduct = productCollection.doc(productID);
-
-        selectedProduct
-        .get()
-        .then((response)=>{
-        setProduct({...response.data(), id: response.id})
-    })}, [productID]);
-
-    const [busqueda, setBusqueda] = useState("");
-    const [usuarios, setUsuarios] = useState([])
-    const { productID } = useParams();
-
-    const handleChange = e =>{
-        setBusqueda(e.target.value)
-        filtrar(e.target.value)
-    }
     
-    const filtrar = (terminoBusqueda)=>{
-        var resultadosBusqueda = product.filter((elemento)=>{
-            if(elemento.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
-                return elemento;
-            }
-        })
-        setUsuarios(resultadosBusqueda)
-    }
+//
+    const [data, setData] =useState([]);
+
+    useEffect(() => {
+        const db = getFirestore() 
+        const productsCollection = db.collection("items");
+        const getDataFromFirestore = async ()=>{
+            const response = await productsCollection.get();
+            setData(response.docs.map((doc)=> ({...doc.data(), id: doc.id})));
+        }
+        getDataFromFirestore();
+    }, []);
+    
+    const nombreCategorias = [];
+    
+    data.forEach(element => {
+        nombreCategorias.push({name: element.category, id: element.categoryID});
+    });
+
+    const nombreCategoriasMap = nombreCategorias.map(elemento=>{
+        return [elemento.name, elemento]
+    })
+    const nombreCategoriasArr = new Map(nombreCategoriasMap);
+    const unicos = [...nombreCategoriasArr.values()];
 
 
+    //drop
     const [dropdown, setDropdown] = useState(false);
 
     const abriCerrarDrop = ()=>{
@@ -69,9 +64,12 @@ function NavBar(){
                             <span style={vinculo}>Categorias</span>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
+                        {unicos.map((product)=>(
                             <Dropdown.Item>
-                                <Link to="categorias">Mates</Link>
+                                <Link to={"categorias/"+product.id} style={{textDecoration:"none", color:"black"}}>{product.name}</Link>
                             </Dropdown.Item>
+                           )
+                        )}
                         </Dropdown.Menu>
                     </Dropdown>
                 <div className="col-sm my-auto" >
@@ -83,7 +81,7 @@ function NavBar(){
                 <div className="col-sm-2 my-auto">
                     <Form className="d-flex">
                         <InputGroup>
-                            <FormControl id="inlineFormInputGroupUsername" placeholder="Buscar" value={busqueda} onChange={handleChange}/>
+                            <FormControl id="inlineFormInputGroupUsername" placeholder="Buscar"/>
                             <InputGroup.Text><Search/></InputGroup.Text>
                         </InputGroup>                  
                     </Form> 

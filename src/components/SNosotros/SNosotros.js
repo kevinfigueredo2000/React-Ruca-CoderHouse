@@ -17,7 +17,7 @@ export const SNosotros = ()=>{
                     </p>
                 </div>
                 <div className="col-sm-6 my-3">
-                    <img src="https://i.pinimg.com/originals/15/1b/40/151b407993b747a2f9019c88f788e326.jpg" className="img-thumbnail"/>
+                    <img src="https://i.pinimg.com/originals/15/1b/40/151b407993b747a2f9019c88f788e326.jpg" alt="imagen" className="img-thumbnail"/>
                 </div>
             </Row>
         </Container>

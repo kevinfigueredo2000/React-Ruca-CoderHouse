@@ -2,6 +2,7 @@ import * as React from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import UserData from "../userData";
 
 function Cart(){
     const { cart, removeItem, clearAll } = useCart();
@@ -17,7 +18,6 @@ function Cart(){
         <>
         {cart[0] == null && <div className="container card text-center mt-3">{cart[0] == null && <div className="my-5"><h1>Ups! Parece que no tenes nada en el carrito.</h1><Link to="/"><button className="btn btn-primary mt-5">Volver a la tienda</button></Link></div>}</div>}
         <Container>
-            
             <Row className="mt-3">
                 {cart.map((purchase)=>{
                     return (
@@ -29,7 +29,7 @@ function Cart(){
                                     </div>
                                     <div className="col-sm-8 mt-4 my-auto">
                                         <p><b>Producto:</b>{purchase.item.name}</p>
-                                        <p><b>Cantidad:</b>{purchase.item.quantity}</p>
+                                        <p><b>Cantidad:</b>{purchase.quantity}</p>
                                         <p><b>Precio:</b>${parseInt(purchase.quantity * purchase.item.price)}</p>
                                     </div>
                                     <div className="col-sm my-auto">
@@ -40,7 +40,12 @@ function Cart(){
                         </>
                         
                     )})}
-                    {cart[0] != null && <div className="col-sm-5 mx-auto card my-4 shadow" style={{padding:25}}>{cart[0] != null && <h3>Total:$ {getTotal(cart)}</h3>}<div className="row my-3"><button className="btn btn-primary mx-auto col-sm-4" >Realizar compra</button>{cart[0] != null && <button className="btn mx-auto col-sm-4" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa"}} onClick={clearAll}>Eliminar todos</button>}</div></div>}
+                    {cart[0] != null && <div className="col-sm-10 mx-auto card mb-4" style={{padding:25}}>
+                        <div className="row my-3">{cart[0] != null && 
+                        <h3 className="mx-auto col-sm-4">Total:$ {getTotal(cart)}</h3>}{cart[0] != null && <button className="btn mx-auto col-sm-2" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa"}} onClick={clearAll}>Eliminar todos</button>}
+                            </div>
+                            </div>}
+                    {cart[0] != null && <UserData/>}
             </Row>
         </Container>
         </>
