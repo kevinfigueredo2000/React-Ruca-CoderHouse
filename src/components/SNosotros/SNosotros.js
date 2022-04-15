@@ -4,7 +4,7 @@ import { Container, Row } from "react-bootstrap";
 export const SNosotros = ()=>{
     return(
         <Container>
-            <h1 className="text-center mt-3">Nuestra historia</h1>
+            <h1 className="mt-3">Nuestra historia</h1>
             <Row>
                 <div className="col-sm-6 card my-3 py-3">
                     <h3>Inicio:</h3>

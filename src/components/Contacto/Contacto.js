@@ -3,6 +3,7 @@ import { Button, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons"
+import "./Contacto.css"
 
 export const Contacto=()=>{
     let sp = {
@@ -10,7 +11,7 @@ export const Contacto=()=>{
         color: "black"
     }
     return(
-        <Container className="mt-3">
+        <Container className="mt-3" id="contacto">
             <h1 className="mt-3">Contacto</h1>
             <Row>
                 <div className="col-sm-4">
