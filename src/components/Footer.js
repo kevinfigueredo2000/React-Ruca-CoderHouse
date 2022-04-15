@@ -33,10 +33,10 @@ function Footer(){
                         <a href='https://www.facebook.com/'><FontAwesomeIcon icon={faFacebook} style={sp}/></a>
                     </div>
                     <div className="col-sm-3 m-auto">
-                        <a style={letras}>Mail: Ruca@mail.com</a>
+                        <p style={letras}>Mail: Ruca@mail.com</p>
                     </div>
                     <div className="col-sm-3 m-auto">
-                        <a style={letras}>Telefono: 1515151515</a>
+                        <p style={letras}>Telefono: 1515151515</p>
                     </div>
                 </Row>
             </Container>
