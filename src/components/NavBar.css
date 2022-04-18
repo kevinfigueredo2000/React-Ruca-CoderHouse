@@ -1,9 +1,3 @@
-.nombreH1{
-    color: white;
-    font-size: 30px;
-    text-decoration-line: none !important;
-
-}
 .items{
     text-decoration:none;
     color:black;
@@ -24,4 +18,31 @@
 
 .cart{
     margin-left:13vh;
+}
+.vinculo{
+    color: white;
+    text-decoration: none;
+}
+.nombreH1{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    margin-left: 8vh;
+}
+#inicio{
+    margin-left: 16vh;
+}
+#categorias{
+    margin-left: 5vh;
+}
+@media screen and (max-width: 767px){
+    .nombreH1{
+        margin-left: 0vh;
+    }
+    #inicio{
+        margin-left: 0vh;
+    }
+    #categorias{
+        margin-left: -2vh;
+    }
 }

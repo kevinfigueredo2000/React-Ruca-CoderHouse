@@ -2,21 +2,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import CartWidget from "./CartWidget/CartWidget.js";
 import Cart from "../images/Cart.png"
 import { Link } from "react-router-dom";
-import { Dropdown, Form, FormControl, InputGroup } from "react-bootstrap";
+import { Dropdown, Form, FormControl, InputGroup, Row } from "react-bootstrap";
 import { Search } from 'react-bootstrap-icons';
 import React, { useEffect, useState }  from 'react';
 import { getFirestore } from "../firebase";
+import "./NavBar.css"
 
 function NavBar(){
-    let nombreH1={
-        color: "white",
-        fontSize: "30px"
-    }
-    let vinculo={
-        color: "white",
-        textDecorationLine: "none",
-    }
-    
 //
     const [data, setData] =useState([]);
 
@@ -51,32 +43,32 @@ function NavBar(){
     }
 
     return(
-        <div className="flexbox py-2 bg-dark" >
-            <div className="row"> 
-                <div className="col-sm-1" style={{marginRight:"8vh", marginLeft:"7vh"}}>
-                    <Link to="/" style={{textDecoration:"none"}}><h1 style={nombreH1}>Ruca</h1></Link>
+        <div className="flexbox py-2 bg-dark">
+            <Row> 
+                <div className="col-sm-1">
+                    <Link to="/" style={{textDecoration:"none"}}><h1 className="nombreH1">Ruca</h1></Link>
                 </div>
                 <div className="col-sm my-auto">
-                    <Link to="/" activeClassName="active" style={vinculo}>Inicio</Link>
+                    <Link to="/" activeClassName="active" className="vinculo" id="inicio">Inicio</Link>
                 </div>
-                    <Dropdown isOpen={dropdown} toggle={abriCerrarDrop} className="col-sm my-auto" style={{marginLeft:"-45px"}}>
-                        <Dropdown.Toggle className="bg-dark border-dark" caret >
-                            <span style={vinculo}>Categorias</span>
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                        {unicos.map((product)=>(
-                            <Dropdown.Item>
-                                <Link to={"categorias/"+product.id} style={{textDecoration:"none", color:"black"}}>{product.name}</Link>
-                            </Dropdown.Item>
-                           )
-                        )}
-                        </Dropdown.Menu>
-                    </Dropdown>
+                <Dropdown isOpen={dropdown} toggle={abriCerrarDrop} className="col-sm my-auto" id="categorias">
+                    <Dropdown.Toggle className="bg-dark border-dark" caret >
+                        <span className="vinculo">Categorias</span>
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                    {unicos.map((product)=>(
+                        <Dropdown.Item>
+                            <Link to={"categorias/"+product.id} style={{textDecoration:"none", color:"black"}}>{product.name}</Link>
+                        </Dropdown.Item>
+                       )
+                    )}
+                    </Dropdown.Menu>
+                </Dropdown>
                 <div className="col-sm my-auto" >
-                    <Link to="sobre-nosotros" activeClassName="active" style={vinculo}>Sobre nosotros</Link>
+                    <Link to="sobre-nosotros" activeClassName="active" className="vinculo">Sobre nosotros</Link>
                 </div>
                 <div className="col-sm my-auto" >
-                    <Link to="contacto" activeClassName="active" style={vinculo}>Contacto</Link>
+                    <Link to="contacto" activeClassName="active" className="vinculo">Contacto</Link>
                 </div>
                 <div className="col-sm-2 my-auto">
                     <Form className="d-flex">
@@ -89,7 +81,7 @@ function NavBar(){
                 <div className="col my-auto fa-cart-shopping" style={{marginLeft:"20vh"}}>
                     <Link to="/cart"><CartWidget Cart={Cart}/></Link>
                 </div>       
-            </div>
+            </Row>
         </div>
     );
 }

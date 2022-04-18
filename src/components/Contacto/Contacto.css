@@ -1,3 +1,10 @@
 #contacto{
-    margin-bottom: 29vh;
+    margin-bottom: 22vh;
+}
+#enviar{
+    float:right;
+}
+.sp{
+    font-size: 25px;
+    color: black;
 }
