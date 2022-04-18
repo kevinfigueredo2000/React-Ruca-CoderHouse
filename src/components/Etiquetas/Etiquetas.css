@@ -2,16 +2,21 @@
     height: 22vh;
     width: 29vh;
 }
+.verMas2{
+    display: none;
+}
 @media screen and (max-width: 767px){
-    #descubri-cel{
-        display: block;
+    .imgsRandom{
+        height: 22vh;
+        width: 33vh;
     }
-    #descubri-pc{
+    .verMas1{
         display: none;
     }
     .verMas2{
-        margin-top: 90px;
-        margin-left: 60px;
+        margin-left: 10px;
+        margin-top: 15vh;
+        display: block;
     }
     
 }
