@@ -1,0 +1,12 @@
+#contactanos2{
+    display: none;
+}
+@media screen and (max-width: 767px){
+#contactanos2{
+    display: block;
+    margin-top: 10px;
+}
+#contactanos1{
+    display: none;
+}
+}

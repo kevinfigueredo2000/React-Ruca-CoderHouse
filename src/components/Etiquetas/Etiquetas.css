@@ -1,0 +1,17 @@
+.imgsRandom{
+    height: 22vh;
+    width: 29vh;
+}
+@media screen and (max-width: 767px){
+    #descubri-cel{
+        display: block;
+    }
+    #descubri-pc{
+        display: none;
+    }
+    .verMas2{
+        margin-top: 90px;
+        margin-left: 60px;
+    }
+    
+}

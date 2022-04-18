@@ -1,3 +1,9 @@
 .Ban{
     width: 100%;
 }
+@media screen and (max-width: 767px){
+    .Ban{
+        height: 26vh;
+        width: 100%;
+    }
+}

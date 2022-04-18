@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { getFirestore } from "../firebase/index";
 import { Item } from "./Item/Item";
 import React from "react";
+import { Container } from "react-bootstrap";
+import "./Categories.css"
 
 const Categories=()=>{
     const [data, setData] =useState([]);
@@ -36,16 +38,16 @@ const Categories=()=>{
         return <p className="text-center" style={{fontSize:"20px", marginTop:"17%", marginBottom:"18%"}}>Cargando los productos...</p>
     }else{
         return(
-            <div className="container" style={{display:"flex", flexDirection:"column", minHeight:"70vh"}}>
+            <Container style={{display:"flex", flexDirection:"column", minHeight:"70vh"}} className="categorias">
                 <h1>{data.categoryID}</h1>
                 <div className="row">
                     {data.map((product)=> 
-                    <div className="col-sm-2">
+                    <div className="col-sm-2 col-6">
                         <Item key={product.key} product={product}/>
                     </div>
                     )}
                 </div>
-            </div>
+            </Container>
             
         )
     }

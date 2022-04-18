@@ -8,3 +8,8 @@
     font-size: 25px;
     color: black;
 }
+@media screen and (max-width: 767px){
+    #contacto{
+        margin-bottom: 5vh;
+    }
+}

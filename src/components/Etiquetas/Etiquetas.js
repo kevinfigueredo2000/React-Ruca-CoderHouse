@@ -1,4 +1,5 @@
 import { Row, Container } from "react-bootstrap";
+import "./Etiquetas.css"
 import { Link } from "react-router-dom";
 import React  from 'react';
 
@@ -6,7 +7,7 @@ export const Etiquetas=()=>{
     return(
         <>
             <h3 className="LGris my-3">Descubrí</h3>
-            <Container>
+            <Container id="descubri-pc">
                 <Row>
                     <div className="card col-sm mx-1 shadow">
                         <Row className="my-3">
@@ -15,8 +16,8 @@ export const Etiquetas=()=>{
                                 <h2>Hasta 12x sin interés</h2>
                                 <Link to="/categorias/2"><button className="btn btn-primary">Ver más</button></Link>
                             </div>
-                            <div className="col-sm">
-                                <img className="img-fluid imgsRandom" alt="imgsRandom" src="https://http2.mlstatic.com/termos-thermos-pack-2-liq-color-1lt-acero-inoxidable-surtido-D_NQ_NP_631127-MLC26776791371_022018-F.jpg"/>
+                            <div className="col-sm col-12">
+                                <img className="imgsRandom" alt="imgsRandom" src="https://http2.mlstatic.com/termos-thermos-pack-2-liq-color-1lt-acero-inoxidable-surtido-D_NQ_NP_631127-MLC26776791371_022018-F.jpg"/>
                             </div>
                         </Row>
                     </div>
@@ -27,8 +28,37 @@ export const Etiquetas=()=>{
                                 <h2>Hasta 6x sin interés</h2>
                                 <Link to="/categorias/1"><button className="btn btn-primary">Ver más</button></Link>
                             </div>
-                            <div className="col-sm">
-                                <img className="imgsRandom img-fluid" alt="imgsRandom" src='https://th.bing.com/th/id/OIP.GgeVtGBt8j-VYyfbQV07BwHaHa?pid=ImgDet&rs=1'/>
+                            <div className="col-sm col-12">
+                                <img className="imgsRandom" alt="imgsRandom" src='https://th.bing.com/th/id/OIP.GgeVtGBt8j-VYyfbQV07BwHaHa?pid=ImgDet&rs=1'/>
+                            </div>
+                        </Row>
+                    </div>
+                </Row>
+            </Container>
+            <Container id="descubri-cel">
+                <Row>
+                <div className="card col-sm mx-1 shadow">
+                        <Row className="my-3">
+                            <div className="col-sm mt-4 mx-4">
+                                <h6 className="LGrisChico">Para disfrutar solo</h6>
+                                <h2>Hasta 6x sin interés</h2>
+                               
+                            </div>
+                            <div className="col-sm col-12"> 
+                                <img className="imgsRandom" alt="imgsRandom" src='https://http2.mlstatic.com/termos-thermos-pack-2-liq-color-1lt-acero-inoxidable-surtido-D_NQ_NP_631127-MLC26776791371_022018-F.jpg'/>
+                                <Link to="/categorias/1"><button className="btn btn-primary verMas2">Ver más</button></Link>
+                            </div>
+                        </Row>
+                    </div>
+                    <div className="card col-sm mx-1 shadow">
+                        <Row className="my-3">
+                            <div className="col-sm mt-4 mx-4">
+                                <h6 className="LGrisChico">Para disfrutar solo</h6>
+                                <h2>Hasta 6x sin interés</h2>
+                            </div>
+                            <div className="col-sm col-12">
+                                <img className="imgsRandom col-8" alt="imgsRandom" src='https://th.bing.com/th/id/OIP.GgeVtGBt8j-VYyfbQV07BwHaHa?pid=ImgDet&rs=1'/>
+                                <Link to="/categorias/1" className="col-4"><button className="btn btn-primary verMas2">Ver más</button></Link>
                             </div>
                         </Row>
                     </div>
