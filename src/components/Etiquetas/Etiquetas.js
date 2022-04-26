@@ -19,7 +19,7 @@ export const Etiquetas=()=>{
                             <div className="col-sm">
                                 <Row>
                                     <img className="imgsRandom col-6" alt="imgsRandom" src="https://http2.mlstatic.com/termos-thermos-pack-2-liq-color-1lt-acero-inoxidable-surtido-D_NQ_NP_631127-MLC26776791371_022018-F.jpg"/>
-                                    <Link to="/categorias/1" className="col-4"><button className="btn btn-primary verMas2">Ver más</button></Link>
+                                    <Link to="/categorias/1" className="col-3 link"><button className="btn btn-primary verMas2">Ver más</button></Link>
                                 </Row>
                             </div>
                         </Row>
@@ -34,7 +34,7 @@ export const Etiquetas=()=>{
                             <div className="col-sm">
                                 <Row>
                                     <img className="imgsRandom col-6" alt="imgsRandom" src='https://th.bing.com/th/id/OIP.GgeVtGBt8j-VYyfbQV07BwHaHa?pid=ImgDet&rs=1'/>
-                                    <Link to="/categorias/1" className="col-4"><button className="btn btn-primary verMas2">Ver más</button></Link>
+                                    <Link to="/categorias/1" className="col-3 link"><button className="btn btn-primary verMas2">Ver más</button></Link>
                                 </Row>
                             </div>
                         </Row>
