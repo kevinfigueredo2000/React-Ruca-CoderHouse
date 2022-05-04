@@ -85,7 +85,7 @@ function NavBar(){
                                 <Dropdown.Menu>
                                     {unicos.map((product)=>(
                                         <Dropdown.Item>
-                                            <Link to={"categorias/"+product.id} style={{textDecoration:"none", color:"black"}} onClick={clickearCerrar}>{product.name}</Link>
+                                            <Link to={"categorias/"+product.id} style={{textDecoration:"none", color:"black", paddingRight:100}} onClick={clickearCerrar}>{product.name}</Link>
                                         </Dropdown.Item>
                                     )
                                     )}

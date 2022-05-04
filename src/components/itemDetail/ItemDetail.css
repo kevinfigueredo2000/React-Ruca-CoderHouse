@@ -1,0 +1,15 @@
+#detalle{
+    margin-left: 33vh;
+}
+#contadorProductos{
+    margin-left: 2vh;
+}
+#row{
+    --bs-gutter-x: 0rem!important;
+}
+.faTruck{
+    font-size: 15px;
+    margin-inline: 7px;
+    color: black;
+
+}
