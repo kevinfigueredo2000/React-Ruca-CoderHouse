@@ -1,7 +1,11 @@
 .App {
   text-align: center;
 }
-
+#footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0%;   
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

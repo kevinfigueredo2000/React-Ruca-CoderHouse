@@ -14,7 +14,7 @@ function Footer(){
         color: "white"
     }
     return(
-        <div className="mt-3 py-4 bg-dark" id="footer">
+        <div className=" py-4 bg-dark" id="footer">
             <Container>
                 <Row>
                     <h4 className='col-sm-6' style={letras}>Nuestras redes:</h4>

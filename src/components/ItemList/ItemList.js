@@ -21,16 +21,13 @@ function ItemList (){
         getDataFromFirestore();
     }, []);
     return(
-        <>
-            <Row>
-                {isLoading? setIsLoading && <p className="text-center">Cargando...</p> : (data.slice(0, 6).map((product)=>(
-                        <div className="col-sm-2 col-6" key={product.id}>
-                            <Item key={product.id} product={product} id={product.id}/>
-                        </div>
-                )))}
-            </Row>
-            
-        </>
+        <Row>
+            {isLoading? setIsLoading && <p className="text-center">Cargando...</p> : (data.slice(0, 6).map((product)=>(
+                <div className="col-sm-2 col-6" key={product.id}>
+                    <Item key={product.id} product={product} id={product.id}/>
+                </div>
+            )))}
+        </Row>
     )
 }
 export default ItemList;

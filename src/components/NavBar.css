@@ -10,8 +10,27 @@
 #busqueda{
     margin-left: 10vh;
 }
-.nav-ul{
-    flex-direction: row;
+#nav{
+    z-index: 1;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    transition: 1s all ease;
+}
+#ulNav{
+    display: contents;
+    flex-wrap: wrap;
+    list-style: none;
+}
+.cartNav{
+    margin-left: 7vh;
+}
+.rucaNav{
+    margin-right: 2vh;
+    margin-left: 5vh;
+}
+.inicioNav{
+    margin-right: -9vh;
 }
 .vinculo{
     color: white;
@@ -21,8 +40,6 @@
     color: white;
     text-decoration: none;
     font-size: 30px;
-    margin-left: -27vh;
-    margin-right: 20vh;
 }
 .navbar-toggle{
     padding: .25rem .75rem;
@@ -40,23 +57,20 @@
     font-size: 20px;
     cursor: pointer;
 }
-#cart{
-    margin-left: 71vh;
-}
 @media screen and (max-width: 767px){
     .nombreH1{
         margin-left: 0vh;
         margin-right: 0vh;;
     }
-    .nav-ul{
+    #ulNav{
         display: none;
         flex-direction: column;
     }
-    .nav-ul.show{
+    #ulNav.show{
         display: flex;
     }
-    .nav{
-        display: none !important;
+    .cartNav{
+        margin-left: 55%;
     }
     .hamburger{
         display: block;
