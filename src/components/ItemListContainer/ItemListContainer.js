@@ -3,13 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import ItemList from "../ItemList/ItemList";
 import { Container } from "react-bootstrap";
 import { Etiquetas } from "../Etiquetas/Etiquetas";
-import { CBanner } from "../CBanner/CBanner";
-import Banner from "../../images/Banner.jpg";
+import { Slider } from "../Slider/Slider";
 
 const ItemListContainer =()=>{
     return(
         <>  
-            <CBanner Banner={Banner}  alt="Banner"/>
+            <Slider/>
             <Container>
                 <ItemList/>
                 <Etiquetas/>
