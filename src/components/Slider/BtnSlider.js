@@ -9,7 +9,7 @@ export const BtnSlider=({ direction, moveSlide }) =>{
       onClick={moveSlide}
       className={direction === "next" ? "btn-slide next" : "btn-slide prev"}
     >
-      <img src={direction === "next" ? rightArrow : leftArrow} />
+      <img alt="img" src={direction === "next" ? rightArrow : leftArrow} />
     </button>
   );
 }
