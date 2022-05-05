@@ -37,7 +37,7 @@ export const Slider = () => {
                     key={obj.id}
                     className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
                     >
-                        <img 
+                        <img alt=''
                         src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} 
                         />
                     </div>
