@@ -15,7 +15,7 @@ import { useTiendaContext } from "../../context/TiendaContext.jsx";
 function NavBar() {
     const [AbrirCerrar, setAbrirCerrar] = useState("hide")
     const { ubicacionPrincipal, desplazamiento_Actual } = useAltPag()
-    const { categorias, setPrueba } = useTiendaContext()
+    const { categorias, setCategory } = useTiendaContext()
     const DivNav = document.getElementById('DivNav');
 
     useEffect(() => {
@@ -31,7 +31,7 @@ function NavBar() {
     const handleNav = (prop) =>{
         AbrirCerrar === "hide" && setAbrirCerrar("show")
         AbrirCerrar === "show" && setAbrirCerrar("hide")
-        setPrueba(prop.name)
+        setCategory(prop.name)
     }
 
     return (
