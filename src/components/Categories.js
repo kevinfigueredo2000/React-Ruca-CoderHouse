@@ -13,10 +13,9 @@ const Categories = () => {
                 <h1>{category}</h1>
                 <div className="row">
                     {
-                        productos.map((product) =>{
-                            if(product.category === category){
+                        productos.filter(word => word.category === category).map((product) =>{
                                 return(<div className="col-sm-2 col-6"><Item key={product.id} product={product} /></div>)
-                            }}
+                            }
                         )
                     }
                 </div>
