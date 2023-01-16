@@ -1,52 +1,103 @@
 import { Container, Row } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons"
 import React, { useRef, useState } from 'react';
 import "./Contacto.css"
-import emailjs from "emailjs-com"
+// import emailjs from "emailjs-com"
+// import { GrMail } from "react-icons/gr";
+import emailjs from '@emailjs/browser';
 
-export const Contacto=()=>{
+export const Contacto = () => {
     const [alertaMensaje, setAlertaMensaje] = useState(true);
+    const [alertaMensajeError, setAlertaMensajeError] = useState(true);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+
     const form = useRef();
 
-    function sendEmail(e){
-        e.preventDefault()
-        emailjs.sendForm('gmail', 'template_2nq5sgn', e.target, 'mv7GgMROqQAEVm9eV')
-          .then((result) => {
-              console.log(result.text);
-              setAlertaMensaje(false);
-          }, (error) => {
-              console.log(error.text);
-          });
-          e.target.reset();
-      };
-    return(
-        <Container className="mt-3 col" id="contacto">
-            <h1 className="mt-3">Contacto</h1>
-            <Row>
-                <div className="col-sm-4 mb-3">
-                    <span className="col-sm-12">Horarios de atención telefónica de 9 a 17hs, de Lunes a viernes</span><br/>
-                    <FontAwesomeIcon icon={faWhatsapp} className="mt-2 sp"/><span className="mx-3">1515151515</span><br/>
-                    <FontAwesomeIcon icon={faPhone} className="mt-2 sp"/><span className="mx-3">+54-15-1515-1515</span><br/>
-                    <FontAwesomeIcon icon={faEnvelope} className="mt-2 sp"/><span className="mx-3">Ruca@mail.com</span><br/>
-                </div>
-                    <div className="card col-12 col-sm-8 py-3">
-                        <form onSubmit={sendEmail} ref={form} method="POST" action="">
-                            <input type="text" name="name" id="name" placeholder="Nombre" className="form-control"/><br/>
-                            <input type="email" name="email" id="email" placeholder="Email" className="form-control mb-4"/>
-                            <textarea name="message" id="message" cols="78" rows="10" placeholder="Comentarios..." className="form-control"/>
+    const sendEmail = (e) => {
+        e.preventDefault();
+        if (name === "" || email === "") {
+            setAlertaMensajeError(false);
+            setTimeout(() => {
+                setAlertaMensajeError(true);
+            }, 1000)
+        }
+        else {
+            emailjs.sendForm('service_het4gxb', 'template_hdtm9gg', form.current, 'nWo_Xw4wadg0Ssnry')
+                .then((result) => {
+                    console.log(result.text);
+                    setAlertaMensaje(false);
+                    setAlertaMensajeError(true)
+                    setTimeout(() => {
+                        setAlertaMensaje(true);
+                        alertaMensajeError ? setAlertaMensajeError(true) : setAlertaMensajeError(false)
+                    }, 1000)
+                    setName("")
+                    setEmail("")
+                }, (error) => {
+                    console.log(error.text);
+                });
+            e.target.reset();
+        }
+
+
+    };
+    // const [alertaMensaje, setAlertaMensaje] = useState(true);
+    // const form = useRef();
+
+    // function sendEmail(e) {
+    //     e.preventDefault()
+    //     emailjs.sendForm('gmail', 'template_2nq5sgn', e.target, 'mv7GgMROqQAEVm9eV')
+    //         .then((result) => {
+    //             console.log(result.text);
+    //             setAlertaMensaje(false);
+    //         }, (error) => {
+    //             console.log(error.text);
+    //         });
+    //     e.target.reset();
+    // };
+    return (
+        <main className="contacto" id="contacto">
+            <Container >
+                <h2 className="mb-3 text-center pt-5">Contacto</h2>
+                <Row>
+
+                    <div className="col-sm-6">
+                        <form action="" method="POST" ref={form} onSubmit={sendEmail}>
+                            <div className="mx-5 mt-3">
+                                <label for="txtNombre">Nombre</label>
+                                <input type="text" name="txtNombre" id="txtNombre" className="form-control" onChange={(e) => { setName(e.target.value) }} />
+                            </div>
+                            <div className="mx-5 mt-2">
+                                <label for="txtApellido">Apellido</label>
+                                <input type="text" name="txtApellido" id="txtApellido" className="form-control" onChange={(e) => { setEmail(e.target.value) }} />
+                            </div>
+                            <div className="mx-5 mt-2">
+                                <label for="txtTelefono">Telefono</label>
+                                <input type="number" name="txtTelefono" id="txtTelefono" className="form-control" />
+                            </div>
+                            <div className="mx-5 mt-2">
+                                <label for="txtEmail">E-mail</label>
+                                <input type="email" name="txtEmail" id="txtEmail" className="form-control" />
+                            </div>
+                            <div className="mx-5 mt-2">
+                                <label for="txtComentario">Comentario</label>
+                                <textarea name="message" id="comentarios" placeholder="Comentarios..." cols="30" rows="5" className="form-control"></textarea>
+                            </div>
                             <div id="alertaMensaje">
-                                <div className="alert alert-success" hidden={alertaMensaje} role="alert">
+                                <div className="alert alert-success text-center" hidden={alertaMensaje} role="alert">
                                     ¡Se ha enviado el mensaje correctamente!
                                 </div>
+                                <div className="alert alert-danger text-center" hidden={alertaMensajeError} role="alert">
+                                    ¡Faltan completar datos!
+                                </div>
                             </div>
-                            <div className="mt-3 col-12 col-sm-12">
-                                <input type="submit" value="Enviar" id="enviar" className="btn btn-primary"/>
+                            <div className="d-flex flex-row justify-content-end mt-3 me-5 mb-3">
+                                <button type="submit">Enviar</button>
                             </div>
                         </form>
-                </div>
-            </Row>
-        </Container>
+                    </div>
+                </Row>
+            </Container>
+        </main>
     )
 }
