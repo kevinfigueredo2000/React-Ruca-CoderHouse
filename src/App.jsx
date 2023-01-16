@@ -16,8 +16,6 @@ import { AlturaPaginaProvider } from "./context/AlturaPag";
 import { TiendaContextProvider } from "./context/TiendaContext";
 import TiendaContainer from "./components/Tienda/TiendaContainer";
 import Index from "./components/Index/Index";
-import ItemList from "./components/ItemList/ItemList";
-// import ItemList from "./components/ItemList/ItemList";
 
 function App() {
   return (

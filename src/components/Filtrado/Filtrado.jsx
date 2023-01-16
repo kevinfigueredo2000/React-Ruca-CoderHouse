@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Container, Dropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import { useTiendaContext } from "../../context/TiendaContext";
 import React from "react";
 
