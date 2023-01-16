@@ -15,7 +15,7 @@ import { useTiendaContext } from "../../context/TiendaContext.jsx";
 function NavBar() {
     const [AbrirCerrar, setAbrirCerrar] = useState("hide")
     const { ubicacionPrincipal, desplazamiento_Actual } = useAltPag()
-    const { categorias, setCategorias, prueba, setPrueba } = useTiendaContext()
+    const { categorias, setPrueba } = useTiendaContext()
     const DivNav = document.getElementById('DivNav');
 
     useEffect(() => {

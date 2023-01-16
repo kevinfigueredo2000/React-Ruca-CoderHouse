@@ -7,7 +7,7 @@ import { useTiendaContext } from "../context/TiendaContext";
 
 const Categories = () => {
     const { productos, prueba } = useTiendaContext()
-{
+
         return (
             <Container style={{ display: "flex", flexDirection: "column", minHeight: "70vh" }} className="categorias">
                 <h1>{prueba}</h1>
@@ -23,7 +23,7 @@ const Categories = () => {
             </Container>
 
         )
-    }
+    
 
 }
 export default Categories;
