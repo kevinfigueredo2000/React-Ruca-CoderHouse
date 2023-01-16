@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import CartWidget from "../CartWidget/CartWidget.js";
 import Cart from "../../images/Cart.png"
 import { Link } from "react-router-dom";
-import { Dropdown, Form, FormControl, InputGroup, Navbar } from "react-bootstrap";
+import { /* Dropdown, */ Form, FormControl, InputGroup, Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Search } from 'react-bootstrap-icons';
@@ -15,7 +15,7 @@ import { useTiendaContext } from "../../context/TiendaContext.jsx";
 function NavBar() {
     const [AbrirCerrar, setAbrirCerrar] = useState("hide")
     const { ubicacionPrincipal, desplazamiento_Actual } = useAltPag()
-    const { categorias, setCategory } = useTiendaContext()
+    const { /* categorias, */ setCategory } = useTiendaContext()
     const DivNav = document.getElementById('DivNav');
 
     useEffect(() => {
@@ -46,6 +46,9 @@ function NavBar() {
                         <Link to="/" activeClassName="active" className="vinculo" id="inicio" onClick={handleNav}>Inicio</Link>
                     </li>
                     <li className="nav-item col-sm my-auto">
+                        <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda" onClick={handleNav}>Tienda</Link>
+                    </li>
+                    {/* <li className="nav-item col-sm my-auto">
                         <Dropdown className="col-sm my-auto" id="categorias">
                             <Dropdown.Toggle className="bg-dark border-dark" >
                                 <span className="vinculo">Categorias</span>
@@ -59,7 +62,7 @@ function NavBar() {
                                 )}
                             </Dropdown.Menu>
                         </Dropdown>
-                    </li>
+                    </li> */}
                     <li className="nav-item col-sm my-auto" onClick={handleNav}>
                         <Link to="sobre-nosotros" activeClassName="active" className="vinculo">Sobre nosotros</Link>
                     </li>

@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import { Etiquetas } from "../Etiquetas/Etiquetas";
 import { Slider } from "../Slider/Slider";
 
-const ItemListContainer =()=>{
+const Index =()=>{
 
     return(
         <main name="bodyPrueba">  
@@ -18,4 +18,4 @@ const ItemListContainer =()=>{
         </main>
     );
 }
-export default ItemListContainer;
+export default Index;

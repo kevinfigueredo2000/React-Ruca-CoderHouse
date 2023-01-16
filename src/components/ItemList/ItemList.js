@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Item } from "../Item/Item.js";
-import { Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import "./ItemList.css"
 import React  from 'react';
 // import CircularProgress from '@mui/material/CircularProgress';
@@ -15,13 +15,16 @@ function ItemList (prop){
 
     // if(isLoading || !productos) return <p className="text-center my-5"><Box> <CircularProgress /></Box></p>;
     return(
-        <Row>
+        <Container>
+            <Row>
             {(productos.slice(numSlice - 6, numSlice).map((product)=>(
                 <div className="col-sm-2 col-6 mx-auto" key={product.id}>
                     <Item key={product.id} product={product} id={product.id}/>
                 </div>
             )))}
         </Row>
+        </Container>
+        
     )
 }
 export default ItemList;
