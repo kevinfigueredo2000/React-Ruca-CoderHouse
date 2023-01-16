@@ -14,7 +14,7 @@ const Categories = () => {
                 <div className="row">
                     {
                         productos.map((product) =>{
-                            if(product.category === prueba){
+                            if(product.category === category){
                                 return(<div className="col-sm-2 col-6"><Item key={product.id} product={product} /></div>)
                             }}
                         )

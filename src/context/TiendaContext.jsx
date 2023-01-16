@@ -30,7 +30,7 @@ export const TiendaContextProvider = ({ children }) => {
     
 
     return (
-        <TiendaContext.Provider value={{ /* isLoading, */ categorias, setCategorias, productos, setProductos, setCategory, category/* handleSort, ordenarPrecioMenor, ordenarPrecioMayor, ordenarMenor, ordenarMayor, cargarMas, sliceParam, setSliceParam */ }}>
+        <TiendaContext.Provider value={{ /* isLoading, */ categorias, setCategorias, productos, setProductos, setCategory, category /* handleSort, ordenarPrecioMenor, ordenarPrecioMayor, ordenarMenor, ordenarMayor, cargarMas, sliceParam, setSliceParam */ }}>
             {children}
         </TiendaContext.Provider>
     )
