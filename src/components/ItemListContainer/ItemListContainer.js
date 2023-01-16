@@ -6,15 +6,16 @@ import { Etiquetas } from "../Etiquetas/Etiquetas";
 import { Slider } from "../Slider/Slider";
 
 const ItemListContainer =()=>{
+
     return(
-        <>  
+        <main name="bodyPrueba">  
             <Slider/>
             <Container>
-                <ItemList/>
+                <ItemList numSlice={6}/>
                 <Etiquetas/>
-                <ItemList/>
+                <ItemList numSlice={12}/>
             </Container>
-        </>
+        </main>
     );
 }
 export default ItemListContainer;

@@ -1,16 +1,33 @@
-import { createContext, useContext, useState } from "react";
-import React  from 'react';
+import { createContext, useContext, useEffect, useState } from "react";
+import React from 'react'
+import { useParams } from "react-router-dom";
+import { getFirestore } from "../firebase";
 
 export const CartContext = createContext([]);
 
 export const CartProvider = ({ children })=>{
     const [cart, setCart] = useState([]);
     const [cantidad, setCantidad] = useState(0)
+    const { productID } = useParams();
+    const [product, setProduct] =useState({});
+
+    useEffect(()=>{
+        const db = getFirestore() 
+        const productCollection = db.collection("items");
+        const selectedProduct = productCollection.doc(productID);
+
+        // setIsLoading(true);
+        selectedProduct
+        .get()
+        .then((response)=>{
+        setProduct({...response.data(), id: response.id})
+    })
+        // .finally(()=> setIsLoading(false));
+    }, [productID]);
 
     const addItem = (item, quantity) => {
         const newItem = { item, quantity };
         console.log("se agregó al carrito: ", newItem)
-        console.log(cart)
         setCart((prevState)=> [...prevState, newItem]);
         setCantidad((prevState)=> prevState+ quantity);
     };
@@ -34,7 +51,7 @@ export const CartProvider = ({ children })=>{
         return total;
     }
     return(
-        <CartContext.Provider value={{cart, addItem, removeItem, clearAll, calcularTotal, cantidad }}>
+        <CartContext.Provider value={{cart, addItem, removeItem, clearAll, calcularTotal, cantidad, product, setProduct }}>
             {children}
         </CartContext.Provider>
     )

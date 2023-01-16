@@ -1,11 +1,11 @@
 #contactanos2{
     display: none;
 }
-#footer{
+/* #footer{
     width: 100%;
     position: fixed;
     bottom: 0%;   
-  }
+  } */
 @media screen and (max-width: 767px){
 #contactanos2{
     display: block;

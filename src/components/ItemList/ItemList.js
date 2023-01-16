@@ -1,29 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Item } from "../Item/Item.js";
-import { getFirestore } from "../../firebase/index.js";
 import { Row } from "react-bootstrap";
 import "./ItemList.css"
 import React  from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+import { useTiendaContext } from "../../context/TiendaContext.jsx";
 
-
-function ItemList (){
-    const [data, setData] = useState([]);
+function ItemList (prop){
+    const { productos } = useTiendaContext()
     const [isLoading, setIsLoading] = useState(false);
+    const numSlice = prop.numSlice;
 
-    useEffect(() => {
-        const db = getFirestore() 
-        const productsCollection = db.collection("items");
-        const getDataFromFirestore = async ()=>{
-            const response = await productsCollection.get();
-            setData(response.docs.map((doc)=> ({...doc.data(), id: doc.id})));
-        }
-        getDataFromFirestore();
-    }, []);
+    if(isLoading || !productos) return <p className="text-center my-5"><Box> <CircularProgress /></Box></p>;
     return(
         <Row>
-            {isLoading? setIsLoading && <p className="text-center">Cargando...</p> : (data.slice(0, 6).map((product)=>(
-                <div className="col-sm-2 col-6" key={product.id}>
+            {(productos.slice(numSlice - 6, numSlice).map((product)=>(
+                <div className="col-sm-2 col-6 mx-auto" key={product.id}>
                     <Item key={product.id} product={product} id={product.id}/>
                 </div>
             )))}

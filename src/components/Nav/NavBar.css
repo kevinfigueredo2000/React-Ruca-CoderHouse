@@ -10,13 +10,6 @@
 #busqueda{
     margin-left: 10vh;
 }
-#nav{
-    z-index: 1;
-    position: sticky;
-    top: 0px;
-    width: 100%;
-    transition: 1s all ease;
-}
 #ulNav{
     display: contents;
     flex-wrap: wrap;
@@ -56,6 +49,12 @@
     color: #fff;
     font-size: 20px;
     cursor: pointer;
+}
+#DivNav{
+    z-index: 5;
+    position: sticky;
+    width: 100%;
+    transition: 1s all ease;
 }
 @media screen and (max-width: 767px){
     .nombreH1{
