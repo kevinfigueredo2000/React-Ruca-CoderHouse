@@ -6,11 +6,11 @@ import "./Categories.css"
 import { useTiendaContext } from "../context/TiendaContext";
 
 const Categories = () => {
-    const { productos, prueba } = useTiendaContext()
+    const { productos, category } = useTiendaContext()
 
         return (
             <Container style={{ display: "flex", flexDirection: "column", minHeight: "70vh" }} className="categorias">
-                <h1>{prueba}</h1>
+                <h1>{category}</h1>
                 <div className="row">
                     {
                         productos.map((product) =>{
