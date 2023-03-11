@@ -19,17 +19,17 @@ import Index from "./components/Index/Index";
 
 function App() {
   return (
-    <TiendaContextProvider>
-      <CartProvider>
-        <AlturaPaginaProvider>
+    <AlturaPaginaProvider>
+      <TiendaContextProvider>
+        <CartProvider>
           <Router>
             <NavBar />
             <Routes>
               <Route path="/">
                 <Route index element={<Index />} />
                 <Route path="tienda">
-                <Route index element={<TiendaContainer />} />
-                  <Route path="categorias/:productID" element={<Categories/>} />
+                  <Route index element={<TiendaContainer />} />
+                  <Route path="categorias/:productID" element={<Categories />} />
                 </Route>
                 <Route path="productos">
                   <Route index element={<ItemDetailContainer />} />
@@ -50,9 +50,9 @@ function App() {
             </Routes>
             <Footer id="footer" />
           </Router>
-        </AlturaPaginaProvider>
-      </CartProvider>
-    </TiendaContextProvider>
+        </CartProvider>
+      </TiendaContextProvider>
+    </AlturaPaginaProvider>
   );
 }
 

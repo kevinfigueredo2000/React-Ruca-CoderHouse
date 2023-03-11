@@ -9,7 +9,6 @@ const TiendaContainer = () => {
             <Row>
                 <Filtrado />
             </Row>
-
             <ItemList prop={-1} />
         </Container>
     )

@@ -34,14 +34,7 @@
     text-decoration: none;
     font-size: 30px;
 }
-.navbar-toggle{
-    padding: .25rem .75rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color:blue;
-    border: 1px solid ;
-    border-radius: .25rem;
-}
+
 .hamburger{
     background-color: transparent;
     display: none;
@@ -55,6 +48,13 @@
     position: sticky;
     width: 100%;
     transition: 1s all ease;
+}
+.cerrar-Nav {
+    top: 0 !important;
+}
+
+.abrir-Nav {
+    top: -100px !important;
 }
 @media screen and (max-width: 767px){
     .nombreH1{
@@ -73,5 +73,12 @@
     }
     .hamburger{
         display: block;
+    }
+    .cerrar-Nav {
+        top: 0 !important;
+    }
+    
+    .abrir-Nav {
+        top: -300px !important;
     }
 }
