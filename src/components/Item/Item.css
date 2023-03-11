@@ -1,13 +1,37 @@
-#expandir{
+#expandir {
     padding-bottom: 20px;
     z-index: 10;
-    position:absolute;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    position: absolute;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
     color: black;
 }
-.precio{
+
+.precio {
     color: black;
 }
-#link{
+
+#link {
     text-decoration: none;
+}
+
+.img-item {
+    height: 184px;
+    width: auto;
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .img-item {
+        height: 150px;
+        width: auto;
+        padding: .25rem;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: .25rem;
+        max-width: 100%;
+    }
 }

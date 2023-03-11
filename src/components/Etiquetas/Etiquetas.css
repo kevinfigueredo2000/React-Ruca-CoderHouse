@@ -1,6 +1,6 @@
 .imgsRandom{
     height: 22vh;
-    width: 29vh;
+    width: auto;
 }
 .verMas2{
     display: none;
@@ -11,10 +11,11 @@
     }
     .verMas2{
         bottom: 0vh;
-        display: block;
+        display: initial;
     }
     .link{
         margin-top: 12vh;
+        /* float: right; */
     }
     
 }

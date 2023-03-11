@@ -43,8 +43,8 @@ export const Slider = () => {
                     </div>
                 )
             })}
-            <BtnSlider moveSlide={nextSlide} direction={"next"} />
-            <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
+            <BtnSlider moveSlide={nextSlide} direction={"next"} className="x"/>
+            <BtnSlider moveSlide={prevSlide} direction={"prev"} className="x"/>
 
             <div className="container-dots">
                 {Array.from({length: 3}).map((item, index) => (
