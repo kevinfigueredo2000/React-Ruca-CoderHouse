@@ -9,7 +9,6 @@ import React/* , { useState } */ from 'react';
 import "./NavBar.css"
 import { useAltPag } from "../../context/AlturaPag.jsx";
 import { useRef, useState } from "react";
-import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function NavBar() {
