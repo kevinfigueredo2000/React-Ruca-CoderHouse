@@ -65,9 +65,6 @@
         display: none;
         flex-direction: column;
     }
-    #ulNav.show{
-        display: flex;
-    }
     .cartNav{
         margin-left: 55%;
     }
@@ -80,5 +77,9 @@
     
     .abrir-Nav {
         top: -300px !important;
+    }
+    .vinculo{
+        color: black;
+        text-decoration: none;
     }
 }

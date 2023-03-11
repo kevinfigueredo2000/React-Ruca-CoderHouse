@@ -12,13 +12,7 @@
     .verMas2{
         bottom: 0vh;
         display: initial;
-    }
-    .link{
-        margin-top: 12vh;
-        /* float: right; */
-    }
-    .prueba{
-        height: 127px;
+        float: right;
     }
     
 }
