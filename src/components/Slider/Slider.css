@@ -8,27 +8,40 @@
 @media screen and (max-width: 767px) {
   .slide {
     width: auto !important;
-    height: 21vh !important;
+    height: 100% !important;
     position: absolute;
     opacity: 0;
     transition: opacity ease-in-out 0.4s;
   }
+
   .container-slider {
     height: 175px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
   }
-  .next{
-    display: none !important;
-  }
-  .prev{
-    display: none !important;
-  }
+
   .dot {
     width: 10px !important;
     height: 10px !important;
   }
+  .btn-slide img{
+    width: 10px !important;
+    height: 12px !important;
+    pointer-events: none !important;
+  }
+  .next {
+    top: 50% !important;
+    right: 10px !important;
+    width: 18px !important;
+    height: 16px !important;
+    transform: translateY(-60%);}
+    .prev {
+      top: 50% !important;
+      left: 10px !important;
+      width: 18px !important;
+      height: 16px !important;
+      transform: translateY(-60%);}
 }
 
 .slide {

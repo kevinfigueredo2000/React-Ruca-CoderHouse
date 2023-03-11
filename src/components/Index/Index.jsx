@@ -8,7 +8,7 @@ import { Slider } from "../Slider/Slider";
 const Index =()=>{
 
     return(
-        <main name="bodyPrueba">  
+        <main name="bodyPrueba" className="w-100">  
             <Slider/>
             <Container>
                 <ItemList numSlice={5}/>
