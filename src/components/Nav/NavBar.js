@@ -2,9 +2,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import CartWidget from "../CartWidget/CartWidget.js";
 import Cart from "../../images/Cart.png"
 import { Link } from "react-router-dom";
-import { Form, FormControl, InputGroup, Navbar } from "react-bootstrap";
+import { /* Form, FormControl, InputGroup, */ Navbar } from "react-bootstrap";
 import { FaBars } from "react-icons/fa";
-import { Search } from 'react-bootstrap-icons';
+// import { Search } from 'react-bootstrap-icons';
 import React/* , { useState } */ from 'react';
 import "./NavBar.css"
 import { useAltPag } from "../../context/AlturaPag.jsx";
@@ -39,25 +39,24 @@ function NavBar() {
                     <FaBars className="fas fa-bars" />
                 </button>
                 <Offcanvas show={show} onHide={handleClose}>
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title>Ruca</Offcanvas.Title>
+                    <Offcanvas.Header className="bg-dark">
+                        <Offcanvas.Title style={{ color: "white" }}>Ruca</Offcanvas.Title>
+                        <h2 onClick={handleClose} style={{color:"white"}}>x</h2>
                     </Offcanvas.Header>
-                    
-                        <div style={{padding:"0rem 1rem"}}>
-                            <li className="nav nav-item mb-3">
-                                <Link to="/" activeClassName="active" className="vinculo" id="inicio" onClick={handleClose}>Inicio</Link>
-                            </li>
-                            <li className="nav nav-item my-3">
-                                <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda" onClick={handleClose}>Tienda</Link>
-                            </li>
-                            <li className="nav nav-item my-3">
-                                <Link to="sobre-nosotros" activeClassName="active" className="vinculo" onClick={handleClose}>Sobre nosotros</Link>
-                            </li>
-                            <li className="nav nav-item my-3">
-                                <Link to="contacto" activeClassName="active" className="vinculo" onClick={handleClose}>Contacto</Link>
-                            </li>
-                        </div>
-                    
+                    <div style={{ padding: "0rem 1rem" }}>
+                        <li className="nav nav-item my-3">
+                            <Link to="/" activeClassName="active" className="vinculo" id="inicio" onClick={handleClose}>Inicio</Link>
+                        </li><hr />
+                        <li className="nav nav-item my-3">
+                            <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda" onClick={handleClose}>Tienda</Link>
+                        </li><hr />
+                        <li className="nav nav-item my-3">
+                            <Link to="sobre-nosotros" activeClassName="active" className="vinculo" onClick={handleClose}>Sobre nosotros</Link>
+                        </li><hr />
+                        <li className="nav nav-item my-3">
+                            <Link to="contacto" activeClassName="active" className="vinculo" onClick={handleClose}>Contacto</Link>
+                        </li><hr />
+                    </div>
                 </Offcanvas>
                 <h1 className="nombreH1 col-sm rucaNav">Ruca</h1>
                 <ul id="ulNav">
@@ -73,14 +72,14 @@ function NavBar() {
                     <li className="nav-item col-sm m-auto">
                         <Link to="contacto" activeClassName="active" className="vinculo">Contacto</Link>
                     </li>
-                    <div className="nav-item col-sm-3 m-auto" id="busqueda">
+                    {/* <div className="nav-item col-sm-3 m-auto" id="busqueda">
                         <Form className="d-flex">
                             <InputGroup>
                                 <FormControl id="inlineFormInputGroupUsername" placeholder="Buscar" />
                                 <InputGroup.Text><Search /></InputGroup.Text>
                             </InputGroup>
                         </Form>
-                    </div>
+                    </div> */}
                 </ul>
                 <li className="nav-item col-sm cartNav" id="cart"><Link to="/cart"><CartWidget Cart={Cart} /></Link></li>
             </Navbar>
