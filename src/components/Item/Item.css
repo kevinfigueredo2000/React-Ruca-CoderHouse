@@ -1,9 +1,13 @@
 #expandir {
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     z-index: 10;
     position: absolute;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
 }
+/* #inspeccionar:hover{
+    position: s;
+
+} */
 
 .color-precio_nombre {
     color: black;
@@ -18,7 +22,6 @@
     width: auto;
     padding: .25rem;
     background-color: #fff;
-    border: 1px solid #dee2e6;
     border-radius: .25rem;
     max-width: 100%;
 }
@@ -29,7 +32,6 @@
         width: auto;
         padding: none;
         background-color: #fff;
-        border: none;
         border-radius: .25rem;
         max-width: 100%;
     }

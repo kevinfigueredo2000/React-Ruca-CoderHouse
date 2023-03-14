@@ -19,7 +19,7 @@ export const Etiquetas = () => {
                             <div className="col-lg mt-lg-4 mx-lg-4">
                                 <h6 className="LGrisChico">Para compartir con amigos</h6>
                                 <h2>Hasta 12x sin interés</h2>
-                                <Link onClick={() => { setCategory(categorias[termo]?.name) }}><button className="btn btn-primary verMas1">Ver más</button></Link>
+                                <Link to={"/tienda/categorias/" + categorias[0]?.id} onClick={() => { setCategory(categorias[termo]?.name) }}><button className="btn btn-primary verMas1">Ver más</button></Link>
                             </div>
                             <div className="col-lg col-12">
                                 <Row>

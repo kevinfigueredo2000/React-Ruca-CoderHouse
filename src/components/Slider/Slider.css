@@ -2,7 +2,7 @@
   height: 405px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  /* box-shadow: 0 10px 20px rgb(0 0 0 / 20%); */
 }
 
 @media screen and (max-width: 767px) {
@@ -18,7 +18,11 @@
     height: 175px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+    /* box-shadow: 0 10px 20px rgb(0 0 0 / 20%); */
+  }
+  .btn-slide {
+    width: 100px;
+    height: 100%;
   }
 
   .dot {
