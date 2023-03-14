@@ -5,8 +5,9 @@ import React from "react";
 import { Search } from "react-bootstrap-icons";
 import { InputGroupText } from "reactstrap";
 
-const Filtrado = () => {
+const Filtrado = (prop) => {
     const { categorias, setCategory } = useTiendaContext()
+    const prueba = prop.prueba
 
     return (
         <Container>
@@ -26,7 +27,7 @@ const Filtrado = () => {
                     <Dropdown.Menu>
                         {categorias.map((cats) => (
                             <Dropdown.Item>
-                                <Link to={"categorias/" + cats.id} onClick={() => { setCategory(cats.name) }} style={{ textDecoration: "none", color: "black", paddingRight: 100 }} >{cats.name}</Link>
+                                <Link to={prueba ? "categorias/" + cats.id : ""} onClick={() => { setCategory(cats.name) }} style={{ textDecoration: "none", color: "black", paddingRight: 100 }} >{cats.name}</Link>
                             </Dropdown.Item>
                         )
                         )}

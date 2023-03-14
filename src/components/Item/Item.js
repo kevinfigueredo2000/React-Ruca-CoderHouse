@@ -11,7 +11,7 @@ export const Item = ({ product }) => {
         return (
             <Link to={`/productos/${product.id}`} id="link">
                 <div className="card my-sm-5 my-3">
-                    <div className="text-center pt-3" style={{height:"32vh"}}>
+                    <div className="text-center pt-3" style={{height:"15rem"}}>
                         <img className="img-item" src={product.img} alt={product.name} />
                         <h6 className="precio mt-3 color-precio_nombre"><b>${product.price}</b></h6>
                         <p className="color-precio_nombre">{product.name.length >= 25 ? product.name.slice(0, 25) + "..." : product.name}</p>

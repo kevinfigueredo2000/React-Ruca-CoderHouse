@@ -27,11 +27,11 @@ function ItemList(prop) {
             <Container>
                 <Row>
                     {numSlice ? (productos.slice(Number(numSlice) - 5, Number(numSlice) - 1).map((product) => ( // numSlice es 12; Menos 5 es 1, no es 0, por lo q muestra mal. Después buscar porqué o en donde pongo para mostrar 4 en el de abajo
-                        <div className="col-sm col-6 mx-auto" key={product.id}>
+                        <div className="col-sm col-6" key={product.id}>
                             <Item key={product.id} product={product} id={product.id} />
                         </div>
                     ))) : productos.map((product) => ( // numSlice es 12; Menos 5 es 1, no es 0, por lo q muestra mal. Después buscar porqué o en donde pongo para mostrar 4 en el de abajo
-                        <div className="col-sm col-6 mx-auto" key={product.id}>
+                        <div className="col-sm col-6" key={product.id}>
                             <Item key={product.id} product={product} id={product.id} />
                         </div>
                     ))}
@@ -43,11 +43,11 @@ function ItemList(prop) {
             <Container>
                 <Row>
                     {numSlice ? (productos.slice(Number(numSlice) - 5, numSlice).map((product) => ( // numSlice es 12; Menos 5 es 1, no es 0, por lo q muestra mal. Después buscar porqué o en donde pongo para mostrar 4 en el de abajo
-                        <div className="col-sm col-6 mx-auto" key={product.id}>
+                        <div className="col-sm col-6" key={product.id}>
                             <Item key={product.id} product={product} id={product.id} />
                         </div>
                     ))) : productos.map((product) => ( // numSlice es 12; Menos 5 es 1, no es 0, por lo q muestra mal. Después buscar porqué o en donde pongo para mostrar 4 en el de abajo
-                        <div className="col-sm-2 col-6 mx-auto mx-sm-0" key={product.id}>
+                        <div className="col-sm-2 col-6" key={product.id}>
                             <Item key={product.id} product={product} id={product.id} />
                         </div>
                     ))}

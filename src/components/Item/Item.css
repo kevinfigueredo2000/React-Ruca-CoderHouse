@@ -27,9 +27,9 @@
     .img-item {
         height: 120px;
         width: auto;
-        padding: .25rem;
+        padding: none;
         background-color: #fff;
-        border: 1px solid #dee2e6;
+        border: none;
         border-radius: .25rem;
         max-width: 100%;
     }

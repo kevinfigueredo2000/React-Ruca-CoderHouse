@@ -13,3 +13,11 @@
     color: black;
 
 }
+@media screen and (max-width: 767px){
+    #detalle{
+        margin-left: 0;
+    }
+    #contadorProductos{
+        margin-left: 0;
+    }
+}

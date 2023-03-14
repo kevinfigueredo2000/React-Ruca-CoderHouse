@@ -36,10 +36,10 @@ function App() {
                   <Route path=":productID" element={<ItemDetail />} />
                 </Route>
                 <Route />
-                <Route index element={<Categories />} />
+                {/* <Route index element={<Categories />} />
                 <Route path="categorias/:categoryID">
                   <Route index element={<Categories />} />
-                </Route>
+                </Route> */}
                 <Route />
                 <Route path="sobre-nosotros" element={<SNosotros />} />
                 <Route path="contacto" element={<Contacto />} />

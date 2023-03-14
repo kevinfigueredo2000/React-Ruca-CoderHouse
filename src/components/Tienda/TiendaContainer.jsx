@@ -6,7 +6,7 @@ import { Container/* , Row */ } from "react-bootstrap";
 const TiendaContainer = () => {
     return (
         <Container>
-            <Filtrado />
+            <Filtrado prueba="categorias/"/>
             <ItemList />
         </Container>
     )
