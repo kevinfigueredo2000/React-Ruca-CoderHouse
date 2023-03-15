@@ -2,18 +2,20 @@ import "bootstrap/dist/css/bootstrap.css";
 import CartWidget from "../CartWidget/CartWidget.js";
 import Cart from "../../images/Cart.png"
 import { Link } from "react-router-dom";
-import { /* Form, FormControl, InputGroup, */ Navbar } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { FaBars } from "react-icons/fa";
-// import { Search } from 'react-bootstrap-icons';
-import React/* , { useState } */ from 'react';
+import React from 'react';
 import "./NavBar.css"
 import { useAltPag } from "../../context/AlturaPag.jsx";
 import { useRef, useState } from "react";
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useCart } from "../../context/CartContext.js";
+import { SideCart } from "./SideCart.jsx";
 
 function NavBar() {
     const { ubicacionPrincipal, desplazamiento_Actual, setDesplazamiento_Actual, setUbicacionPrincipal } = useAltPag()
     const DivNav = useRef()
+    const {handleShowCart} = useCart()
 
     window.onscroll = function () {
         setDesplazamiento_Actual(window.pageYOffset)
@@ -31,12 +33,6 @@ function NavBar() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    const [showCart, setShowCart] = useState(false);
-
-    console.log(showCart)
-    const handleCloseCart = () => setShowCart(false);
-    const handleShowCart = () => setShowCart(true);
 
     return (
         <section className="py-2 bg-dark" id="DivNav" ref={DivNav}>
@@ -81,12 +77,7 @@ function NavBar() {
                 </ul>
                 <li className="nav-item " id="cart" >
                     <span onClick={handleShowCart}><CartWidget Cart={Cart} /></span>
-                    <Offcanvas placement="end" show={showCart} onHide={handleCloseCart}>
-                    <Offcanvas.Header className="bg-dark">
-                        <Offcanvas.Title style={{ color: "white" }}>Carrito</Offcanvas.Title>
-                        <h2 onClick={handleCloseCart} style={{color:"white"}}>x</h2>
-                    </Offcanvas.Header>             
-                </Offcanvas>
+                    <SideCart/>
                 </li>
             </Navbar>
         </section>

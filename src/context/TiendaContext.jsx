@@ -8,8 +8,8 @@ export const TiendaContextProvider = ({ children }) => {
     const [categorias, setCategorias] = useState([]);
     const [productos, setProductos] = useState([]);
     // const [isLoading, setIsLoading] = useState(true);
-    const [category, setCategory] = useState()
-
+    const [category, setCategory] = useState();
+    
     useEffect(() => {
         const db = getFirestore()
         const categoriasCollection = db.collection("Categories");
@@ -30,7 +30,8 @@ export const TiendaContextProvider = ({ children }) => {
     
 
     return (
-        <TiendaContext.Provider value={{ /* isLoading, */ categorias, setCategorias, productos, setProductos, setCategory, category /* handleSort, ordenarPrecioMenor, ordenarPrecioMayor, ordenarMenor, ordenarMayor, cargarMas, sliceParam, setSliceParam */ }}>
+        <TiendaContext.Provider value={{ /* isLoading, */ categorias, setCategorias, productos, setProductos, setCategory, category
+        /* handleSort, ordenarPrecioMenor, ordenarPrecioMayor, ordenarMenor, ordenarMayor, cargarMas, sliceParam, setSliceParam */ }}>
             {children}
         </TiendaContext.Provider>
     )

@@ -45,7 +45,7 @@
     cursor: pointer;
 }
 #DivNav{
-    z-index: 5;
+    z-index: 50;
     position: sticky;
     width: 100%;
     transition: 1s all ease;
