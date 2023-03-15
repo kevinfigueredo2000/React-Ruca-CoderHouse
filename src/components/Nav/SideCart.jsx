@@ -66,6 +66,7 @@ export const SideCart = () => {
             {cart.length === 0 ? "" : <button className='btn btn-primary mb-5 col-sm-10 mx-sm-auto' onClick={() => { clearAll() }}>Limpiar Carrito</button>}
             {cart.length === 0 ? "" :
                 <button className=' col-sm-10 btn btn-primary mb-2' style={{ position: "absolute", bottom: "0", left:"8%" }}>
+                    comprar ahora
                     {/* <a style={{ all: "unset" }} href={"#"} rel="noopener noreferrer" >Comprar ahora</a> */}
                 </button>
             }
