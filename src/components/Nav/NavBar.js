@@ -32,6 +32,12 @@ function NavBar() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [showCart, setShowCart] = useState(false);
+
+    console.log(showCart)
+    const handleCloseCart = () => setShowCart(false);
+    const handleShowCart = () => setShowCart(true);
+
     return (
         <section className="py-2 bg-dark" id="DivNav" ref={DivNav}>
             <Navbar>
@@ -41,7 +47,7 @@ function NavBar() {
                 <Offcanvas show={show} onHide={handleClose}>
                     <Offcanvas.Header className="bg-dark">
                         <Offcanvas.Title style={{ color: "white" }}>Ruca</Offcanvas.Title>
-                        <h2 onClick={handleClose} style={{color:"white"}}>x</h2>
+                        <h2 onClick={handleClose} style={{ color: "white" }}>x</h2>
                     </Offcanvas.Header>
                     <div style={{ padding: "0rem 1rem" }}>
                         <li className="nav nav-item my-3">
@@ -58,30 +64,30 @@ function NavBar() {
                         </li><hr />
                     </div>
                 </Offcanvas>
-                <h1 className="nombreH1 col-sm rucaNav">Ruca</h1>
+                <h1 className="nombreH1 col-sm-1 rucaNav">Ruca</h1>
                 <ul id="ulNav">
-                    <li className="nav-item col-sm my-auto inicioNav">
+                    <li className="nav-item me-sm-5 my-auto ">
                         <Link to="/" activeClassName="active" className="vinculo" id="inicio">Inicio</Link>
                     </li>
-                    <li className="nav-item col-sm my-auto">
+                    <li className="nav-item me-sm-5 my-auto">
                         <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda">Tienda</Link>
                     </li>
-                    <li className="nav-item col-sm my-auto">
+                    <li className="nav-item me-sm-5 my-auto">
                         <Link to="sobre-nosotros" activeClassName="active" className="vinculo">Sobre nosotros</Link>
                     </li>
-                    <li className="nav-item col-sm m-auto">
+                    <li className="nav-item me-sm-5 my-auto">
                         <Link to="contacto" activeClassName="active" className="vinculo">Contacto</Link>
                     </li>
-                    {/* <div className="nav-item col-sm-3 m-auto" id="busqueda">
-                        <Form className="d-flex">
-                            <InputGroup>
-                                <FormControl id="inlineFormInputGroupUsername" placeholder="Buscar" />
-                                <InputGroup.Text><Search /></InputGroup.Text>
-                            </InputGroup>
-                        </Form>
-                    </div> */}
                 </ul>
-                <li className="nav-item col-sm cartNav" id="cart"><Link to="/cart"><CartWidget Cart={Cart} /></Link></li>
+                <li className="nav-item " id="cart" >
+                    <span onClick={handleShowCart}><CartWidget Cart={Cart} /></span>
+                    <Offcanvas placement="end" show={showCart} onHide={handleCloseCart}>
+                    <Offcanvas.Header className="bg-dark">
+                        <Offcanvas.Title style={{ color: "white" }}>Carrito</Offcanvas.Title>
+                        <h2 onClick={handleCloseCart} style={{color:"white"}}>x</h2>
+                    </Offcanvas.Header>             
+                </Offcanvas>
+                </li>
             </Navbar>
         </section>
     );

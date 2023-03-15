@@ -15,11 +15,12 @@
     flex-wrap: wrap;
     list-style: none;
 }
-.cartNav{
-    margin-left: 7vh;
+#cart{
+    margin-left: 48rem;
+    position: unset;
 }
 .rucaNav{
-    margin-right: 2vh;
+    margin-right: 11vh;
     margin-left: 5vh;
 }
 .inicioNav{
@@ -65,8 +66,9 @@
         display: none;
         flex-direction: column;
     }
-    .cartNav{
-        margin-left: 55%;
+    #cart{
+        margin-left: 56%;
+        position: unset;
     }
     .hamburger{
         display: block;
