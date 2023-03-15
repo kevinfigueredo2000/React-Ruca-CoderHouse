@@ -77,7 +77,7 @@ function NavBar() {
                 </ul>
                 <li className="nav-item " id="cart" >
                     <span onClick={handleShowCart}><CartWidget Cart={Cart} /></span>
-                    <><SideCart/>{cantidadCarrito === 0 ? "" : <span className="badge rounded-pill" style={window.innerWidth <= 768 ? { cursor: "pointer", backgroundColor: "#0d6efd", border:"1px solid white", transform: "translate(45px,-45px)" } : { cursor: "pointer", backgroundColor: "#0d6efd", border:"1px solid white", transform: "translate(-50%,-50%)" }} onClick={handleShowCart}>{cantidadCarrito}</span>}</>
+                    <><SideCart/>{cantidadCarrito === 0 ? "" : <span className="badge rounded-pill" style={window.innerWidth <= 768 ? { cursor: "pointer", backgroundColor: "#0d6efd", border:"1px solid white", transform: "translate(-11px, -13px)" } : { cursor: "pointer", backgroundColor: "#0d6efd", border:"1px solid white", transform: "translate(-50%,-50%)" }} onClick={handleShowCart}>{cantidadCarrito}</span>}</>
                 </li>
             </Navbar>
         </section>
