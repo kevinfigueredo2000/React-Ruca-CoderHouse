@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 import { Dropdown, Form, FormControl, InputGroup } from "react-bootstrap";
 import { useTiendaContext } from "../../context/TiendaContext";
-import React, { useState } from "react";
+import React/* , { useState } */ from "react";
 import { Search } from "react-bootstrap-icons";
 import { InputGroupText } from "reactstrap";
 
 const Filtrado = (prop) => {
     const { categorias, setCategory } = useTiendaContext()
     const cat = prop.cat
-    const [prueba, setPrueba] = useState("")
+    // const [prueba, setPrueba] = useState("")
 
     const buscador = (e) => {
-        setPrueba(e.target.value)
+        // setPrueba(e.target.value)
     }
 
     /* const filteredProducts = data.filter(

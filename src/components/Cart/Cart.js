@@ -1,11 +1,10 @@
 import * as React from "react";
 import { Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import UserData from "../userData";
 
 function Cart() {
-    const { cart, removeItem, clearAll } = useCart();
+    const { cart, clearAll } = useCart();
 
     const getTotal = (cart) => {
         let total = 0;
