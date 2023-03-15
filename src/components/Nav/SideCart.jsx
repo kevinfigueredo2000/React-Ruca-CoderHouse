@@ -6,7 +6,6 @@ import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa"
 import { FiCheckSquare } from "react-icons/fi"
 import currency from 'currency.js';
 import { Link } from 'react-router-dom';
-import Cart from '../Cart/Cart';
 
 export const SideCart = () => {
     const { showCart, handleCloseCart, cart, clearAll, removeItem, actualizarCarrito, cantidadCarrito, setContenedor, contenedor } = useCart();
@@ -68,7 +67,7 @@ export const SideCart = () => {
             {cart.length === 0 ? "" : <button className='btn btn-primary mb-5 col-sm-10 mx-sm-auto' onClick={() => { clearAll() }}>Limpiar Carrito</button>}
             {cart.length === 0 ? "" :
                 <button className=' col-sm-10 col-10 btn btn-primary mb-2' style={{ position: "absolute", bottom: "0", left:"8%" }}>
-                    <Link to={Cart}>comprar ahora</Link>
+                    <Link to="/cart"><button className="btn btn-primary">Comprar ahora</button></Link>
                 </button>
             }
         </Offcanvas>
