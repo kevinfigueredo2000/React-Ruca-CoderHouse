@@ -45,11 +45,11 @@ export const BLatItemDetail = () => {
                 {/* <p className="estrellas">*****</p> */}
                 <span className="precio">{currency(product.price, { decimal: ',', separator: "." }).format()}</span><p className="cuotas">Hasta 12 cuotas sin interés</p>
                 <span className=" my-3 ">Envío:<b> Acordar con el vendedor</b></span>
-                <button className="my-2 btn_negro w-100"><a style={{ all: "unset" }} onClick={() => { clearAll() }}
-                    href={`https://api.whatsapp.com/send?phone=+541151212855&text=%C2%A1Hola!%20Estoy%20interesado%20en%20${(product.name) + "  Cantidad: " + (counter)}%20.`}
-                    target="_blank" rel="noopener noreferrer" >Comprar ahora</a>
+                <button className="my-2 w-100"><Link style={{ all: "unset" }} onClick={() => { clearAll() }}
+                    to={`https://api.whatsapp.com/send?phone=+541151212855&text=%C2%A1Hola!%20Estoy%20interesado%20en%20${(product.name) + "  Cantidad: " + (counter)}%20.`}
+                    target="_blank" rel="noopener noreferrer" >Comprar ahora</Link>
                 </button>
-                <button className=" btn_negro col-10 mb-2" onClick={handleClick}>Agregar al carrito</button>
+                <button className=" col-10 mb-2" onClick={handleClick}>Agregar al carrito</button>
                 <select name="quantity" onChange={(evt) => { setCounter(Number(evt.target.value)) }} className="col-sm-2 mt-3 ms-2" style={{ height: "30px" }} >
                     {prueba()}
                 </select>
