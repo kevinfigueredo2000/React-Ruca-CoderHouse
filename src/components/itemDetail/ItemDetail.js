@@ -64,7 +64,7 @@ export const ItemDetail = () => {
         return (
             <>
                 <SideCart placement="end"/>
-                {/* <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} /> */}
+                <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} />
                 <Carousel className="w-100 prueba">
                     <Carousel.Item >
                         <img src={product.img} className="img-fluid" alt={product.id} onClick={() => setAbrir(true)} />
