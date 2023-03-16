@@ -15,10 +15,7 @@
     flex-wrap: wrap;
     list-style: none;
 }
-#cart{
-    margin-left: 48rem;
-    position: unset;
-}
+
 .rucaNav{
     margin-right: 11vh;
     margin-left: 5vh;
@@ -65,10 +62,6 @@
     #ulNav{
         display: none;
         flex-direction: column;
-    }
-    #cart{
-        margin-left: 49%;
-        position: unset;
     }
     .hamburger{
         display: block;

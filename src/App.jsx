@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from './components/Nav/NavBar';
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
-import { ItemDetail } from "./components/itemDetail/ItemDetail";
+// import { ItemDetail } from "./components/itemDetail/ItemDetail";
 import NotFoundPage from "./components/notFoundPage";
 import Categories from "./components/Categories";
 import Cart from "./components/Cart/Cart";
@@ -32,8 +32,8 @@ function App() {
                   <Route path="categorias/:productID" element={<Categories />} />
                 </Route>
                 <Route path="productos">
-                  <Route index element={<ItemDetailContainer />} />
-                  <Route path=":productID" element={<ItemDetail />} />
+                  {/* <Route index element={<ItemDetailContainer />} /> */}
+                  <Route path=":productID" element={<ItemDetailContainer />} />
                 </Route>
                 <Route path="sobre-nosotros" element={<SNosotros />} />
                 <Route path="contacto" element={<Contacto />} />

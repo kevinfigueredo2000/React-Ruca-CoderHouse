@@ -25,7 +25,7 @@ export const Item = ({ product }) => {
                 <div className="card my-sm-5  my-3" onMouseEnter={() => setInspeccionar("expandir")} onMouseLeave={() => setInspeccionar("")} id={inspeccionar}>
                     <div className="card-body text-center">
                         <img className="img-item" src={product.img} alt={product.name} />
-                        <h6 className="precio mt-3 color-precio_nombre"><b>${product.price}</b></h6>
+                        <h6 className="mt-3 color-precio_nombre"><b>${product.price}</b></h6>
                         <p className="card-title mt-3 color-precio_nombre" style={inspeccionar === "expandir" ? { display: "contents" } : { display: "none" }}>{product.name.length >= 25 ? product.name.slice(0, 25) + "..." : product.name}</p>
                     </div>
                 </div>

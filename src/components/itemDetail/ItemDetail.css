@@ -1,17 +1,23 @@
-#detalle{
-    margin-left: 33vh;
+.imgsProductosMenu{
+    height: 35vh;
 }
-#contadorProductos{
-    margin-left: 2vh;
+.nombreItem{
+    font-size: 24px;
 }
-#row{
-    --bs-gutter-x: 0rem!important;
+.estrellas{
+    color: blue;
+    font-size: 30px;
 }
-.faTruck{
-    font-size: 15px;
-    margin-inline: 7px;
-    color: black;
-
+.precio{
+    font-size: 30px;
+}
+.cuotas{
+    font-size: 20px;
+}
+.activeIMG{
+    border: 2px solid rgb(196, 140, 0);
+    height: auto;
+    border-radius: 10px;
 }
 @media screen and (max-width: 767px){
     #detalle{

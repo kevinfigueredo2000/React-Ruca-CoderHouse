@@ -36,9 +36,9 @@ export const SideCart = () => {
                 return (
                     <Card className='m-2 p-sm-2' style={{ position: "relative" }} onClick={() => { /* navigate(`/productos/${prod.item.id}`); */ handleCloseCart() }}>
                         <Row>
-                            <Col className='col-3 text-center'>
-                                <img className='img-fluid my-1' alt={`imagen de ${prod.item.img}`} style={{ height: "70px" }} src={prod.item.img} />
-                            </Col>
+                            <div className='col-3 text-center'>
+                                <img className='img-fluid my-3' alt={`imagen de ${prod.item.img}`} style={{ height: "70px" }} src={prod.item.img} />
+                            </div>
                             <Col>
                                 <Row>
                                     <p className='col-6'>Nombre</p>
@@ -52,7 +52,17 @@ export const SideCart = () => {
                                         :
                                         <p className='col-4 text-center'>{prod.quantity}</p>
                                     }
-                                    {prod.item.id === currentID && edit === true ? <FiCheckSquare className="col-2" style={{ cursor: "pointer", marginLeft: "5%" }} onClick={(evt) => { handleClick(prod.item.id, cantidadCarrito, contenedor); evt.preventDefault(); evt.stopPropagation(); prod.quantity === 0 && removeItem(prod.item.id) }} /> : <FaRegEdit style={{ cursor: "pointer" }} className='col-2 ' onClick={(evt) => { handleClick(prod.item.id); evt.preventDefault(); evt.stopPropagation() }} />}
+                                    {
+                                        prod.item.id === currentID && edit === true ? 
+                                        <FiCheckSquare className="col-2"style={{ cursor: "pointer", marginLeft: "5%" }} onClick={(evt) => {
+                                                handleClick(prod.item.id, cantidadCarrito, contenedor);
+                                                evt.preventDefault(); evt.stopPropagation(); prod.quantity === 0 && removeItem(prod.item.id)
+                                            }} />
+                                            : <FaRegEdit style={{ cursor: "pointer" }} className='col-2 ' onClick={(evt) => {
+                                                handleClick(prod.item.id); evt.preventDefault();
+                                                evt.stopPropagation()
+                                            }} />
+                                    }
 
                                 </Row>
                                 <Row className='float-end mx-5'>
@@ -63,12 +73,14 @@ export const SideCart = () => {
                     </Card>
                 )
             })}
-            {cart.length === 0 ? "" : <Row><h4 className='text-end'>Total: {getTotal(cart)}</h4></Row>}
+            {cart.length === 0 ? "" : <Row className='pe-2'><h4 className='text-end'>Total: {getTotal(cart)}</h4></Row>}
             {cart.length === 0 ? "" : <button className='btn btn-primary mb-5 col-sm-10 mx-sm-auto' onClick={() => { clearAll() }}>Limpiar Carrito</button>}
             {cart.length === 0 ? "" :
-                <button className=' col-sm-10 col-10 btn btn-primary mb-2' style={{ position: "absolute", bottom: "0", left:"8%" }}>
-                    <Link to="/cart"><button className="btn btn-primary">Comprar ahora</button></Link>
-                </button>
+                <Link to="/cart">
+                    <button className=' col-sm-10 col-10 btn btn-primary mb-2' style={{ position: "absolute", bottom: "0", left: "8%" }}>
+                        Comprar ahora
+                    </button>
+                </Link>
             }
         </Offcanvas>
     )
