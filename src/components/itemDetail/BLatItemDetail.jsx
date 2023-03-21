@@ -42,13 +42,13 @@ export const BLatItemDetail = () => {
             <div className="col-sm-12 my-4">
                 <p className="nombreItem"><b>{product.name}</b></p>
                 <p><b>{product.marca}</b></p>
-                {/* <p className="estrellas">*****</p> */}
                 <span className="precio">{currency(product.price, { decimal: ',', separator: "." }).format()}</span><p className="cuotas">Hasta 12 cuotas sin interés</p>
                 <span className=" my-3 ">Envío:<b> Acordar con el vendedor</b></span>
-                <button className="my-2 w-100"><Link style={{ all: "unset" }} onClick={() => { clearAll() }}
-                    to={`https://api.whatsapp.com/send?phone=+541151212855&text=%C2%A1Hola!%20Estoy%20interesado%20en%20${(product.name) + "  Cantidad: " + (counter)}%20.`}
-                    target="_blank" rel="noopener noreferrer" >Comprar ahora</Link>
-                </button>
+                <Link to="/cart">
+                    <button className="my-2 w-100 btn btn-primary">
+                        Comprar ahora
+                    </button>
+                </Link>
                 <button className=" col-10 mb-2" onClick={handleClick}>Agregar al carrito</button>
                 <select name="quantity" onChange={(evt) => { setCounter(Number(evt.target.value)) }} className="col-sm-2 mt-3 ms-2" style={{ height: "30px" }} >
                     {prueba()}
@@ -60,11 +60,10 @@ export const BLatItemDetail = () => {
             <div className="col-sm-12 my-4">
                 <p className="nombreItem"><b>{product.name}</b></p>
                 <p><b>{product.marca}</b></p>
-                {/* <p className="estrellas">*****</p> */}
                 <span className="precio">{currency(product.price, { decimal: ',', separator: "." }).format()}</span><p className="cuotas">Hasta 12 cuotas sin interés</p>
                 <span className=" my-3 ">Envío:<b> Acordar con el vendedor</b></span>
                 <Link to="/cart">
-                    <button className="my-3 col-sm-10 col-10 btn_negro">
+                    <button className="my-3 col-sm-10 col-10 btn btn-primary">
                         Comprar ahora
                     </button>
                 </Link>
