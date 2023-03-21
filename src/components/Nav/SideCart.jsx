@@ -76,8 +76,8 @@ export const SideCart = () => {
             {cart.length === 0 ? "" : <Row className='pe-2'><h4 className='text-end'>Total: {getTotal(cart)}</h4></Row>}
             {cart.length === 0 ? "" : <button className='btn btn-primary mb-5 col-sm-10 mx-sm-auto' onClick={() => { clearAll() }}>Limpiar Carrito</button>}
             {cart.length === 0 ? "" :
-                <Link to="/cart">
-                    <button className=' col-sm-10 col-10 btn btn-primary mb-2' onClick={()=> {setShowCart(false)} } style={{ position: "absolute", bottom: "0", left: "8%" }}>
+                <Link to="/cart" onClick={()=> {setShowCart(false)} }>
+                    <button className=' col-sm-10 col-10 btn btn-primary mb-2' style={{ position: "absolute", bottom: "0", left: "8%" }}>
                         Comprar ahora
                     </button>
                 </Link>
