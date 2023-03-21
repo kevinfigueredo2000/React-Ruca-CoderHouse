@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../../firebase";
-import { BLatItemDetail } from "../ItemDetail/BLatItemDetail";
-import { ItemDetail } from "../ItemDetail/ItemDetail"
-import "./ItemDetailContainer.css"
+import { BLatItemDetail } from "../itemDetail/BLatItemDetail";
+import { ItemDetail } from "../itemDetail/ItemDetail";
+import "./ItemDetailContainer.css";
 
 export const ItemDetailContainer = () => {
     const { productID } = useParams();
