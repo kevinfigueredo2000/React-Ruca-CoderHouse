@@ -49,7 +49,7 @@ export const BLatItemDetail = () => {
                         Comprar ahora
                     </button>
                 </Link>
-                <button className=" col-10 mb-2" onClick={handleClick}>Agregar al carrito</button>
+                <button className=" col-10 mb-2 btn btn-primary" onClick={handleClick}>Agregar al carrito</button>
                 <select name="quantity" onChange={(evt) => { setCounter(Number(evt.target.value)) }} className="col-sm-2 mt-3 ms-2" style={{ height: "30px" }} >
                     {prueba()}
                 </select>
@@ -68,7 +68,7 @@ export const BLatItemDetail = () => {
                     </button>
                 </Link>
                 <Row>
-                    <button className="my-3 ms-2 col-sm-7 col-10  btn_negro" onClick={handleClick}>Agregar al carrito</button>
+                    <button className="my-3 ms-2 col-sm-7 col-10  btn btn-primary" onClick={handleClick}>Agregar al carrito</button>
                     <select name="quantity" onChange={(evt) => { setCounter(Number(evt.target.value)) }} className="col-sm-2 mt-3 ms-3" style={{ height: "30px" }} >
                         {prueba()}
                     </select>
