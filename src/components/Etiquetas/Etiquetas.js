@@ -14,7 +14,7 @@ export const Etiquetas = () => {
             <h3 className="LGris my-3">Descubrí</h3>
             <Container id="descubri-pc">
                 <Row>
-                    <div className="card col-sm col-12 mb-lg-0 mb-3 me-lg-1 shadow">
+                    <div className="card col-sm col-12 mb-lg-0 mb-3 me-lg-1 tags">
                         <Row className="my-lg-3 my-3">
                             <div className="col-lg mt-lg-4 mx-lg-4">
                                 <h6 className="LGrisChico">Para compartir con amigos</h6>
@@ -29,7 +29,7 @@ export const Etiquetas = () => {
                             </div>
                         </Row>
                     </div>
-                    <div className="card col-sm col-12 ms-lg-1 shadow">
+                    <div className="card col-sm col-12 ms-lg-1 tags">
                         <Row className="my-lg-3 my-3">
                             <div className="col-lg mt-lg-4 mx-lg-4">
                                 <h6 className="LGrisChico">Para disfrutar solo</h6>

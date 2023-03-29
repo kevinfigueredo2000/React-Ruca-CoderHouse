@@ -8,26 +8,13 @@ import { InputGroupText } from "reactstrap";
 const Filtrado = (prop) => {
     const { categorias, setCategory } = useTiendaContext()
     const cat = prop.cat
-    // const [prueba, setPrueba] = useState("")
-
-    const buscador = (e) => {
-        // setPrueba(e.target.value)
-    }
-
-    /* const filteredProducts = data.filter(
-        prods => {
-            return (
-                prods.name.toLowerCase().includes(prueba.toLowerCase())
-            );
-        }
-    ); */
 
     return (
         <>
             <div className="nav-item col-sm-3 m-auto" id="busqueda">
                 <Form className="d-flex">
                     <InputGroup>
-                        <FormControl id="inlineFormInputGroupUsername" placeholder="Buscar" onChange={buscador} />
+                        <FormControl id="inlineFormInputGroupUsername" placeholder="Buscar" /* onChange={buscador}   hacer un componente del buscador y un context*//>
                         <InputGroupText><Search /></InputGroupText>
                     </InputGroup>
                 </Form>

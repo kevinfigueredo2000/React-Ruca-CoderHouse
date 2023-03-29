@@ -1,14 +1,3 @@
-#expandir {
-    /* padding-bottom: 20px; */
-    z-index: 10;
-    position: absolute;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-}
-/* #inspeccionar:hover{
-    position: s;
-
-} */
-
 .color-precio_nombre {
     color: black;
 }

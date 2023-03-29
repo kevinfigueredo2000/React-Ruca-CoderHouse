@@ -58,28 +58,34 @@ export const Contacto = () => {
     return (
         <main className="contacto" id="contacto">
             <Container >
-                <h2 className="mb-3 text-center pt-5">Contacto</h2>
+                <h1 className="mb-3 text-center mt-xxl-4 mt-4">Contacto</h1>
                 <Row>
-
-                    <div className="col-sm-6">
+                    <div className="col-xxl-6 col-12">
+                        <h4 className="mt-xxl-3">Contactanos en:</h4>
+                        <p>Escribinos para coordinar unavisita y conocer nuestros productos</p>
+                        <p>Showroom - Rosario, Santa Fe</p>
+                        <p>+54 9 341 3591112</p>
+                        <p>ventas@chemate.com.ar</p>
+                    </div>
+                    <div className="col-xxl-6 col-10 mx-auto">
                         <form action="" method="POST" ref={form} onSubmit={sendEmail}>
-                            <div className="mx-5 mt-3">
+                            <div className="mx-xxl-5 mt-3">
                                 <label for="txtNombre">Nombre</label>
                                 <input type="text" name="txtNombre" id="txtNombre" className="form-control" onChange={(e) => { setName(e.target.value) }} />
                             </div>
-                            <div className="mx-5 mt-2">
+                            <div className="mx-xxl-5 mt-2">
                                 <label for="txtApellido">Apellido</label>
                                 <input type="text" name="txtApellido" id="txtApellido" className="form-control" onChange={(e) => { setEmail(e.target.value) }} />
                             </div>
-                            <div className="mx-5 mt-2">
+                            <div className="mx-xxl-5 mt-2">
                                 <label for="txtTelefono">Telefono</label>
                                 <input type="number" name="txtTelefono" id="txtTelefono" className="form-control" />
                             </div>
-                            <div className="mx-5 mt-2">
+                            <div className="mx-xxl-5 mt-2">
                                 <label for="txtEmail">E-mail</label>
                                 <input type="email" name="txtEmail" id="txtEmail" className="form-control" />
                             </div>
-                            <div className="mx-5 mt-2">
+                            <div className="mx-xxl-5 mt-2">
                                 <label for="txtComentario">Comentario</label>
                                 <textarea name="message" id="comentarios" placeholder="Comentarios..." cols="30" rows="5" className="form-control"></textarea>
                             </div>
@@ -91,7 +97,7 @@ export const Contacto = () => {
                                     ¡Faltan completar datos!
                                 </div>
                             </div>
-                            <div className="d-flex flex-row justify-content-end mt-3 me-5 mb-3">
+                            <div className="d-flex flex-row justify-content-end mt-3 me-xxl-5 mb-3">
                                 <button type="submit">Enviar</button>
                             </div>
                         </form>
