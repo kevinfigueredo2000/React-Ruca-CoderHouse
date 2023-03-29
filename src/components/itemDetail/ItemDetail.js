@@ -6,34 +6,11 @@ import { getFirestore } from "../../firebase";
 import React from 'react';
 import "./ItemDetail.css";
 
-// export const MostrarProducto = (prop) => {
-//     const prueba = prop.abrir
-//     const prueba2 = prop.productImg
-//     const prueba3 = prop.cerrar
-
-//     return (
-//         < Modal
-//             show={prueba}
-//             onHide={prueba3}
-//             style={{
-//                 marginTop: "5%", width: "68vh",
-//                 left: "65vh"
-//             }}
-//         >
-//             <Modal.Body style={{ padding: "0px" }}>
-//                 <img src={prueba2} alt="" />
-//             </Modal.Body>
-//         </Modal>
-//     )
-// }
-
-
 export const ItemDetail = () => {
     const { productID } = useParams();
     const [product, setProduct] = useState({});
     const [selectedImg, setSelectedImg] = useState(null)
     const [active, setActive] = useState(null)
-    // const [isLoading, setIsLoading] = useState(false)
     // const [abrir, setAbrir] = useState(false)
 
     const cambiarImg = (imagen) => {
@@ -49,17 +26,15 @@ export const ItemDetail = () => {
             .get()
             .then((response) => {
                 setProduct({ ...response.data(), id: response.id })
-                // setIsLoading(false)
             })
     }, [productID]);
 
-    // if (isLoading || !product) return <p className="text-center mt-5" style={{ fontSize: "30px" }}>Cargando...</p>
     if (window.innerWidth <= 768) {
         return (
             <>
                 {/* <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} /> */}
                 <img src={product.img} className="img-fluid" alt={product.id} /* onClick={() => setAbrir(true)} */ />
-                    {/* <Carousel.Item >
+                {/* <Carousel.Item >
                         <img src={product.img} className="img-fluid" alt={product.id} onClick={() => setAbrir(true)} />
                     </Carousel.Item>
                     {product.imgsSec && (product.imgsSec).map((i) => {
@@ -69,8 +44,7 @@ export const ItemDetail = () => {
                             </Carousel.Item>
                         )
                     })}
-                    no lo toma */} 
-                
+                    no lo toma */}
             </>
         )
     } else {
@@ -93,3 +67,26 @@ export const ItemDetail = () => {
         )
     }
 }
+
+
+
+// export const MostrarProducto = (prop) => {
+//     const prueba = prop.abrir
+//     const prueba2 = prop.productImg
+//     const prueba3 = prop.cerrar
+
+//     return (
+//         < Modal
+//             show={prueba}
+//             onHide={prueba3}
+//             style={{
+//                 marginTop: "5%", width: "68vh",
+//                 left: "65vh"
+//             }}
+//         >
+//             <Modal.Body style={{ padding: "0px" }}>
+//                 <img src={prueba2} alt="" />
+//             </Modal.Body>
+//         </Modal>
+//     )
+// }

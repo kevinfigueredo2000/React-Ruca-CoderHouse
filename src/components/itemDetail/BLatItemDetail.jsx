@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState } from "react";
 import { /* Placeholder, */ Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import { getFirestore } from "../../firebase";
@@ -63,7 +63,7 @@ export const BLatItemDetail = () => {
                 <span className="precio">{currency(product.price, { decimal: ',', separator: "." }).format()}</span><p className="cuotas">Hasta 12 cuotas sin interés</p>
                 <span className=" my-3 ">Envío:<b> Acordar con el vendedor</b></span>
                 <Link to="/cart">
-                    <button className="my-3 col-sm-10 col-10 btn btn-primary">
+                    <button className="my-3 col-sm-10 col-10 btn btn-primary" onClick={handleClick}>
                         Comprar ahora
                     </button>
                 </Link>

@@ -19,7 +19,7 @@ function ItemList(prop) {
 
     if (isLoading || !productos) {
         return (
-            <p className="text-center my-5"><Box> <CircularProgress /></Box></p>
+            <p className="text-center" style={{margin: "25% 0px 25% 0px"}}><Box> <CircularProgress /></Box></p>
         );
 
     } else if (window.innerWidth <= 768) {

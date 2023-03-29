@@ -3,14 +3,16 @@ import React, { useEffect, useState } from 'react';
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../../firebase";
-import { BLatItemDetail } from "../itemDetail/BLatItemDetail";
-import { ItemDetail } from "../itemDetail/ItemDetail";
+import { BLatItemDetail } from "../ItemDetail/BLatItemDetail";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.css";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 export const ItemDetailContainer = () => {
     const { productID } = useParams();
     const [product, setProduct] = useState({});
-    // const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const db = getFirestore()
@@ -20,9 +22,11 @@ export const ItemDetailContainer = () => {
             .get()
             .then((response) => {
                 setProduct({ ...response.data(), id: response.id })
-                // setIsLoading(false)
+                setIsLoading(false)
             })
     }, [productID]);
+
+    if (isLoading || !product) {return <p className="text-center" style={{margin: "19% 0px 19% 0px"}}><Box> <CircularProgress /></Box></p>}
     if (window.innerWidth <= 768) {
         return (
             < Container className=" col-sm-8" id="prueba" >
@@ -44,7 +48,7 @@ export const ItemDetailContainer = () => {
 
     } else {
         return (
-            <Container className="card col-sm-8" id="prueba">
+            <Container className="card col-sm-8 my-xxl-5" id="prueba">
                 <div className="row" >
                     <div className="col-sm-8 my-5">
                         <ItemDetail />
