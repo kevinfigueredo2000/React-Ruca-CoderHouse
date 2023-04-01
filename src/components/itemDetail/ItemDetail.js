@@ -51,7 +51,7 @@ export const ItemDetail = () => {
         return (
             <Container>
                 <Row>
-                    <div className="card col-sm-1 col-2 py-3">
+                    <div className="card col-xxl-1 col-sm-2 py-xxl-3 py-sm-3">
                         <img src={product.img} className={`mb-3 ${active === product.img ? "activeIMG" : ""}`} alt={product.id} onMouseEnter={() => { cambiarImg(product.img) }} />
                         {product.imgsSec && (product.imgsSec).map((i) => {
                             return (<img src={i} alt={i} className={`mb-3 ${active === i ? "activeIMG" : ""}`} onMouseEnter={() => { cambiarImg(i) }} />)
@@ -59,7 +59,7 @@ export const ItemDetail = () => {
 
                     </div>
                     {/* <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} /> */}
-                    <div className="col-sm-11 col-8 text-center my-4">
+                    <div className="col-xxl-11 col-sm-8 text-center my-xxl-4 my-sm-4">
                         <img src={selectedImg ? selectedImg : product.img} className="imgsProductosMenu" alt={product.id} /* onClick={() => setAbrir(true)}  */ />
                     </div>
                 </Row>

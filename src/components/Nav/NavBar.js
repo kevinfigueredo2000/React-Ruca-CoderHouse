@@ -61,25 +61,27 @@ function NavBar() {
                             </li><hr />
                         </div>
                     </Offcanvas>
-                    <h1 className="nombreH1 col-sm-1 rucaNav">Ruca</h1>
-                    <ul id="ulNav">
-                        <li className="nav-item me-sm-5 my-auto ">
-                            <Link to="/" activeClassName="active" className="vinculo" id="inicio">Inicio</Link>
+                    <h1 className="nombreH1 col-xxl-1 col-sm-1 rucaNav">Ruca</h1>
+                    <Row className="w-100">
+                        <ul id="ulNav" className="col-xxl-10 col-sm-10">
+                            <li className="nav-item col-sm-1 col-xxl-1 my-auto  me-xxl-1">
+                                <Link to="/" activeClassName="active" className="vinculo" id="inicio">Inicio</Link>
+                            </li>
+                            <li className="nav-item col-sm-1 col-xxl-1 my-auto me-xxl-1">
+                                <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda">Tienda</Link>
+                            </li>
+                            <li className="nav-item col-sm-2 ms-sm-4 me-sm-0 ms-xxl-0 col-xxl-1 my-auto me-xxl-5">
+                                <Link to="sobre-nosotros" activeClassName="active" className="vinculo">Sobre nosotros</Link>
+                            </li>
+                            <li className="nav-item col-sm-1 col-xxl-1 my-auto me-xxl-1">
+                                <Link to="contacto" activeClassName="active" className="vinculo">Contacto</Link>
+                            </li>
+                        </ul>
+                        <li className="nav-item col-sm me-sm-5 col-xxl me-xxl-5 " id="cart" >
+                            <span className="float-end" onClick={handleShowCart}><CartWidget Cart={Cart} />{cantidadCarrito === 0 ? "" : <span className="badge rounded-pill translate-middle" style={window.innerWidth <= 768 ? { cursor: "pointer", backgroundColor: "#0d6efd", border: "1px solid white" } : { cursor: "pointer", backgroundColor: "#0d6efd", border: "1px solid white" }} onClick={handleShowCart}>{cantidadCarrito}</span>}</span>
+                            <><SideCart /></>
                         </li>
-                        <li className="nav-item me-sm-5 my-auto">
-                            <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda">Tienda</Link>
-                        </li>
-                        <li className="nav-item me-sm-5 my-auto">
-                            <Link to="sobre-nosotros" activeClassName="active" className="vinculo">Sobre nosotros</Link>
-                        </li>
-                        <li className="nav-item me-sm-5 my-auto">
-                            <Link to="contacto" activeClassName="active" className="vinculo">Contacto</Link>
-                        </li>
-                    </ul>
-                    <li className="nav-item col-9 col-sm-6" id="cart" >
-                        <span className="float-end" onClick={handleShowCart}><CartWidget Cart={Cart} />{cantidadCarrito === 0 ? "" : <span className="badge rounded-pill translate-middle" style={window.innerWidth <= 768 ? { cursor: "pointer", backgroundColor: "#0d6efd", border: "1px solid white" } : { cursor: "pointer", backgroundColor: "#0d6efd", border: "1px solid white" }} onClick={handleShowCart}>{cantidadCarrito}</span>}</span>
-                        <><SideCart /></>
-                    </li>
+                    </Row>
                 </Navbar>
             </Row>
         </section>
