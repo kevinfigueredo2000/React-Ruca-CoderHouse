@@ -45,7 +45,7 @@ export const BLatItemDetail = () => {
                 <span className="precio">{currency(product.price, { decimal: ',', separator: "." }).format()}</span><p className="cuotas">Hasta 12 cuotas sin interés</p>
                 <span className=" my-3 ">Envío:<b> Acordar con el vendedor</b></span>
                 <Link to="/cart">
-                    <button className="my-2 w-100 btn btn-primary">
+                    <button className="my-2 w-100 btn btn-primary" onClick={handleClick}>
                         Comprar ahora
                     </button>
                 </Link>
