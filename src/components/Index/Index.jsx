@@ -11,7 +11,7 @@ const Index =()=>{
         <main name="bodyPrueba" className="w-100">  
             <Slider/>
             <Container>
-                <ItemList numSlice={5}/>
+                <ItemList numSlice={4}/>
                 <Etiquetas/>
                 <ItemList numSlice={10}/>
             </Container>

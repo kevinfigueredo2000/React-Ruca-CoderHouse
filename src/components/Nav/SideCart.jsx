@@ -32,52 +32,54 @@ export const SideCart = () => {
                 <Offcanvas.Title style={{ color: "white" }}>Carrito</Offcanvas.Title>
                 <h2 onClick={handleCloseCart} style={{ color: "white" }}>x</h2>
             </Offcanvas.Header>
-            {cart.length === 0 ? <p className='text-center'>No tienes productos en el carrito!</p> : cart.map((prod) => {
-                return (
-                    <Card className='m-2 p-sm-2' style={{ position: "relative" }} onClick={() => { /* navigate(`/productos/${prod.item.id}`); */ handleCloseCart() }}>
-                        <Row>
-                            <div className='col-3 text-center'>
-                                <img className='img-fluid my-3' alt={`imagen de ${prod.item.img}`} style={{ height: "70px" }} src={prod.item.img} />
-                            </div>
-                            <Col>
-                                <Row>
-                                    <p className='col-6'>Nombre</p>
-                                    <p className='col-4'>Cantidad</p>
-                                    <FaRegTrashAlt alt="eliminar del carrito" className='col-2 mt-1' style={{ cursor: "pointer" }} onClick={(evt) => { evt.preventDefault(); evt.stopPropagation(); removeItem(prod.item.id) }}></FaRegTrashAlt>
-                                </Row>
-                                <Row>
-                                    <p className='col-6'>{prod.item.name}</p>
-                                    {prod.item.id === currentID && edit === true ?
-                                        <input className='col-sm-3 col-3 ms-sm-2 ms-2 text-center' onClick={(evt) => { evt.preventDefault(); evt.stopPropagation() }} onInputCapture={(evt) => { prod.quantity = Number(evt.target.value); setContenedor(Number(evt.target.value)) }} defaultValue={prod.quantity} type="number" min={1} max={prod.item.stock} inputMode="numeric" style={{ height: "20px", textAlign: "center" }} />
-                                        :
-                                        <p className='col-4 text-center'>{prod.quantity}</p>
-                                    }
-                                    {
-                                        prod.item.id === currentID && edit === true ? 
-                                        <FiCheckSquare className="col-2"style={{ cursor: "pointer", marginLeft: "5%" }} onClick={(evt) => {
-                                                handleClick(prod.item.id, cantidadCarrito, contenedor);
-                                                evt.preventDefault(); evt.stopPropagation(); prod.quantity === 0 && removeItem(prod.item.id)
-                                            }} />
-                                            : <FaRegEdit style={{ cursor: "pointer" }} className='col-2 ' onClick={(evt) => {
-                                                handleClick(prod.item.id); evt.preventDefault();
-                                                evt.stopPropagation()
-                                            }} />
-                                    }
+            <article style={{overflow:"auto"}}>
+                {cart.length === 0 ? <p className='text-center'>No tienes productos en el carrito!</p> : cart.map((prod) => {
+                    return (
+                        <Card className='m-2 p-sm-2' style={{ position: "relative" }} onClick={() => { /* navigate(`/productos/${prod.item.id}`); */ handleCloseCart() }}>
+                            <Row>
+                                <div className='col-3 text-center'>
+                                    <img className='img-fluid my-3' alt={`imagen de ${prod.item.img}`} style={{ height: "70px" }} src={prod.item.img} />
+                                </div>
+                                <Col>
+                                    <Row>
+                                        <p className='col-6'>Nombre</p>
+                                        <p className='col-4'>Cantidad</p>
+                                        <FaRegTrashAlt alt="eliminar del carrito" className='col-2 mt-1' style={{ cursor: "pointer" }} onClick={(evt) => { evt.preventDefault(); evt.stopPropagation(); removeItem(prod.item.id) }}></FaRegTrashAlt>
+                                    </Row>
+                                    <Row>
+                                        <p className='col-6'>{prod.item.name}</p>
+                                        {prod.item.id === currentID && edit === true ?
+                                            <input className='col-sm-3 col-3 ms-sm-2 ms-2 text-center' onClick={(evt) => { evt.preventDefault(); evt.stopPropagation() }} onInputCapture={(evt) => { prod.quantity = Number(evt.target.value); setContenedor(Number(evt.target.value)) }} defaultValue={prod.quantity} type="number" min={1} max={prod.item.stock} inputMode="numeric" style={{ height: "20px", textAlign: "center" }} />
+                                            :
+                                            <p className='col-4 text-center'>{prod.quantity}</p>
+                                        }
+                                        {
+                                            prod.item.id === currentID && edit === true ?
+                                                <FiCheckSquare className="col-2" style={{ cursor: "pointer", marginLeft: "5%" }} onClick={(evt) => {
+                                                    handleClick(prod.item.id, cantidadCarrito, contenedor);
+                                                    evt.preventDefault(); evt.stopPropagation(); prod.quantity === 0 && removeItem(prod.item.id)
+                                                }} />
+                                                : <FaRegEdit style={{ cursor: "pointer" }} className='col-2 ' onClick={(evt) => {
+                                                    handleClick(prod.item.id); evt.preventDefault();
+                                                    evt.stopPropagation()
+                                                }} />
+                                        }
 
-                                </Row>
-                                <Row className='float-end mx-5'>
-                                    <b>${prod.quantity * prod.item.price}</b>
-                                </Row>
-                            </Col>
-                        </Row>
-                    </Card>
-                )
-            })}
+                                    </Row>
+                                    <Row className='float-end mx-5'>
+                                        <b>${prod.quantity * prod.item.price}</b>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </Card>
+                    )
+                })}
+            </article>
             {cart.length === 0 ? "" : <Row className='pe-2'><h4 className='text-end'>Total: {getTotal(cart)}</h4></Row>}
             {cart.length === 0 ? "" : <button className='btn btn-primary mb-5 col-sm-10 mx-sm-auto' onClick={() => { clearAll() }}>Limpiar Carrito</button>}
             {cart.length === 0 ? "" :
                 <Link to="/cart">
-                    <button className=' col-sm-10 col-10 btn btn-primary mb-2' onClick={ ()=> {handleCloseCart()} } style={{ position: "absolute", bottom: "0", left: "8%" }}>
+                    <button className=' col-sm-10 col-10 btn btn-primary mb-2' onClick={() => { handleCloseCart() }} style={{ position: "absolute", bottom: "0", left: "8%" }}>
                         Comprar ahora
                     </button>
                 </Link>

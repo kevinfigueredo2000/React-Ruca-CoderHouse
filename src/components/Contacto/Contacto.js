@@ -60,14 +60,14 @@ export const Contacto = () => {
             <Container >
                 <h1 className="mb-3 text-center mt-xxl-4 mt-4">Contacto</h1>
                 <Row>
-                    <div className="col-xxl-6 col-12">
+                    <div className="col-xxl-6 col-12 col-sm-6">
                         <h4 className="mt-xxl-3">Contactanos en:</h4>
                         <p>Escribinos para coordinar unavisita y conocer nuestros productos</p>
                         <p>Showroom - Rosario, Santa Fe</p>
                         <p>+54 9 341 3591112</p>
                         <p>ventas@chemate.com.ar</p>
                     </div>
-                    <div className="col-xxl-6 col-10 mx-auto">
+                    <div className="col-xxl-6 col-10 mx-auto col-sm-6">
                         <form action="" method="POST" ref={form} onSubmit={sendEmail}>
                             <div className="mx-xxl-5 mt-3">
                                 <label for="txtNombre">Nombre</label>

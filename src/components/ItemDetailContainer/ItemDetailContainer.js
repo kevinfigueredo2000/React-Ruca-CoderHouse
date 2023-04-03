@@ -50,7 +50,7 @@ export const ItemDetailContainer = () => {
         return (
             <Container className="card col-xxl-8 col-sm-8 my-sm-3 my-xxl-5" id="prueba">
                 <div className="row" >
-                    <div className="col-sm-8 my-5">
+                    <div className="col-sm-8 my-5 m-auto">
                         <ItemDetail />
                     </div>
                     <div className="col-sm-4 col-12 my-5">

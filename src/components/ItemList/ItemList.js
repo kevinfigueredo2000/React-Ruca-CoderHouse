@@ -42,12 +42,12 @@ function ItemList(prop) {
         return (
             <Container>
                 <Row>
-                    {numSlice ? (productos.slice(Number(numSlice) - 5, numSlice).map((product) => ( // numSlice es 12; Menos 5 es 1, no es 0, por lo q muestra mal. Después buscar porqué o en donde pongo para mostrar 4 en el de abajo
-                        <div className="col-xxl-2 col-sm-3" key={product.id}>
+                    {numSlice ? (productos.slice(Number(numSlice) - 4, numSlice).map((product) => ( // numSlice es 12; Menos 5 es 1, no es 0, por lo q muestra mal. Después buscar porqué o en donde pongo para mostrar 4 en el de abajo
+                        <div className="col-xxl-3 col-sm-3 m-auto" key={product.id}>
                             <Item key={product.id} product={product} id={product.id} />
                         </div>
                     ))) : productos.map((product) => ( // numSlice es 12; Menos 5 es 1, no es 0, por lo q muestra mal. Después buscar porqué o en donde pongo para mostrar 4 en el de abajo
-                        <div className="col-xxl-2 col-sm-3" key={product.id}>
+                        <div className="col-xxl-3 col-sm-3 m-auto" key={product.id}>
                             <Item key={product.id} product={product} id={product.id} />
                         </div>
                     ))}
