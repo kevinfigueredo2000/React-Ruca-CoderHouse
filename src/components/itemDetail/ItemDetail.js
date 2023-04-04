@@ -1,22 +1,32 @@
-import "bootstrap/dist/css/bootstrap.min.css"
-import { useEffect, useState } from "react";
-import { Container, /* Modal, */ Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Carousel, Container, Modal, Row  } from "react-bootstrap";
+import { useParams } from "react-router";
 import { getFirestore } from "../../firebase";
-import React from 'react';
 import "./ItemDetail.css";
+
+export const MostrarProducto = (prop) => {
+    const prueba = prop.abrir
+    const prueba2 = prop.productImg
+    const prueba3 = prop.cerrar
+
+    return (
+        < Modal
+            show={prueba}
+            onHide={prueba3}
+            style={window.innerWidth <= 768 ? { marginTop: "25%" } : { marginTop: "5%" }}
+        >
+            <img src={prueba2} alt="" style={{ height: "auto" }} />
+        </Modal>
+    )
+}
 
 export const ItemDetail = () => {
     const { productID } = useParams();
     const [product, setProduct] = useState({});
     const [selectedImg, setSelectedImg] = useState(null)
     const [active, setActive] = useState(null)
-    // const [abrir, setAbrir] = useState(false)
-
-    const cambiarImg = (imagen) => {
-        setSelectedImg(imagen)
-        setActive(imagen)
-    }
+    const [abrir, setAbrir] = useState(false)
+    console.log(product.img)
 
     useEffect(() => {
         const db = getFirestore()
@@ -29,22 +39,27 @@ export const ItemDetail = () => {
             })
     }, [productID]);
 
+    const cambiarImg = (imagen) => {
+        setSelectedImg(imagen)
+        setActive(imagen)
+    }
+
     if (window.innerWidth <= 768) {
         return (
             <>
-                {/* <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} /> */}
-                <img src={product.img} className="img-fluid" alt={product.id} /* onClick={() => setAbrir(true)} */ />
-                {/* <Carousel.Item >
-                        <img src={product.img} className="img-fluid" alt={product.id} onClick={() => setAbrir(true)} />
+                <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} />
+                <Carousel className="w-100">
+                    <Carousel.Item>
+                        <img src={product.img} alt={product.id} onClick={() =>{ setAbrir(true);  cambiarImg(product.img)}} />
                     </Carousel.Item>
                     {product.imgsSec && (product.imgsSec).map((i) => {
                         return (
                             <Carousel.Item >
-                                <img src={i} className="img-fluid" alt={i} />
+                                <img src={i} className="img-fluid" alt={i} onClick={() => {setAbrir(true);  cambiarImg(i)}} />
                             </Carousel.Item>
                         )
                     })}
-                    no lo toma */}
+                </Carousel>
             </>
         )
     } else {
@@ -58,9 +73,9 @@ export const ItemDetail = () => {
                         })}
 
                     </div>
-                    {/* <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} /> */}
+                    <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} />
                     <div className="col-xxl-11 col-sm-8 text-center my-xxl-4 my-sm-4">
-                        <img src={selectedImg ? selectedImg : product.img} className="imgsProductosMenu" alt={product.id} /* onClick={() => setAbrir(true)}  */ />
+                        <img src={selectedImg ? selectedImg : product.img} className="imgsProductosMenu" alt={product.id} onClick={() => setAbrir(true)} />
                     </div>
                 </Row>
             </Container>
@@ -69,24 +84,3 @@ export const ItemDetail = () => {
 }
 
 
-
-// export const MostrarProducto = (prop) => {
-//     const prueba = prop.abrir
-//     const prueba2 = prop.productImg
-//     const prueba3 = prop.cerrar
-
-//     return (
-//         < Modal
-//             show={prueba}
-//             onHide={prueba3}
-//             style={{
-//                 marginTop: "5%", width: "68vh",
-//                 left: "65vh"
-//             }}
-//         >
-//             <Modal.Body style={{ padding: "0px" }}>
-//                 <img src={prueba2} alt="" />
-//             </Modal.Body>
-//         </Modal>
-//     )
-// }

@@ -4,9 +4,12 @@ import { useCart } from "../../context/CartContext";
 import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa"
 import { FiCheckSquare } from "react-icons/fi"
 import UserData from "../userData";
+import { useState } from "react";
 
 function Cart() {
-    const { cart, clearAll, handleCloseCart, /* handleClick, */ removeItem, currentID, edit, contenedor, cantidadCarrito, setContenedor, setCurrentID, setEdit, actualizarCarrito } = useCart();
+    const { cart, clearAll, removeItem, contenedor, cantidadCarrito, setContenedor, actualizarCarrito } = useCart();
+    const [edit, setEdit] = useState(false);
+    const [currentID, setCurrentID] = useState("")
 
     const getTotal = (cart) => {
         let total = 0;
@@ -30,7 +33,7 @@ function Cart() {
                             <article style={{ overflow: "auto", maxHeight: "32vh", height: "auto" }}>
                                 {cart.map((prod) => {
                                     return (
-                                        <Card className='m-2' onClick={() => { /* navigate(`/productos/${prod.item.id}`); */ handleCloseCart() }}>
+                                        <Card className='m-2'>
                                             <Row>
                                                 <div className='col-xxl-2 col-sm-2 col-3 text-center mt-2'>
                                                     <img className='img-fluid' alt={`imagen de ${prod.item.img}`} style={{ height: "70px" }} src={prod.item.img} />
@@ -39,13 +42,13 @@ function Cart() {
                                                     <Row>
                                                         <p className='col-xxl col-sm col-12'>{prod.item.name}</p>
                                                         {prod.item.id === currentID && edit === true ?
-                                                            <input className='col-xxl-2 col-2 ms-sm-2 ms-2 text-center' onClick={(evt) => { evt.preventDefault(); evt.stopPropagation() }} onInputCapture={(evt) => { prod.quantity = Number(evt.target.value); setContenedor(Number(evt.target.value)) }} defaultValue={prod.quantity} type="number" min={1} max={prod.item.stock} inputMode="numeric" style={{ height: "20px", textAlign: "center" }} />
+                                                            <input className='col-xxl-1 col-sm-1 col ' onClick={(evt) => { evt.preventDefault(); evt.stopPropagation() }} onInputCapture={(evt) => { prod.quantity = Number(evt.target.value); setContenedor(Number(evt.target.value)) }} defaultValue={prod.quantity} type="number" min={1} max={prod.item.stock} inputMode="numeric" style={{ height: "20px", textAlign: "center" }} />
                                                             :
                                                             <p className='col-xxl-1 col-sm-1 col'>{prod.quantity}</p>
                                                         }
                                                         {
                                                             prod.item.id === currentID && edit === true ?
-                                                                <FiCheckSquare className="col-xxl-2 col-sm-2 col-2" style={{ cursor: "pointer", marginLeft: "5%" }} onClick={(evt) => {
+                                                                <FiCheckSquare className="col-xxl-1 col-sm-1 col-2" style={{ cursor: "pointer", marginLeft: "5%" }} onClick={(evt) => {
                                                                     handleClick(prod.item.id, cantidadCarrito, contenedor);
                                                                     evt.preventDefault(); evt.stopPropagation(); prod.quantity === 0 && removeItem(prod.item.id)
                                                                 }} />

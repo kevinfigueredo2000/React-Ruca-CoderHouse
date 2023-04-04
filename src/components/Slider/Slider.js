@@ -34,7 +34,7 @@ export const Slider = () => {
 
 
     return (
-        <div className="container-slider">
+        <div className="container-slider" id="slider">
             {dataSlider.map((obj, index) => {
                 return (
                     <div

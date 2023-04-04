@@ -9,10 +9,9 @@ import { Link } from "react-router-dom";
 
 export const BLatItemDetail = () => {
     const [counter, setCounter] = useState(1);
-    const { addItem/* , cart, , clearAll*/ } = useCart();
+    const { addItem } = useCart();
     const { productID } = useParams();
     const [product, setProduct] = useState({});
-    // const [loading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const db = getFirestore()
@@ -22,7 +21,6 @@ export const BLatItemDetail = () => {
             .get()
             .then((response) => {
                 setProduct({ ...response.data(), id: response.id })
-                // setIsLoading(false)
             })
     }, [productID]);
 
