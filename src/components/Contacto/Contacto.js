@@ -57,7 +57,7 @@ export const Contacto = () => {
     // };
     return (
         <main className="contacto" id="contacto">
-            <Container >
+            <Container style={{minHeight:"712px", height:"auto"}}>
                 <h1 className="mb-3 text-center mt-xxl-4 mt-4">Contacto</h1>
                 <Row>
                     <div className="col-xxl-6 col-12 col-sm-6">

@@ -34,12 +34,12 @@ export const Slider = () => {
 
 
     return (
-        <div className="container-slider" id="slider">
+        <div className="containerSlider" id="slider">
             {dataSlider.map((obj, index) => {
                 return (
                     <div
                         key={obj.id}
-                        className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
+                        className={slideIndex === index + 1 ? "Slide active-anim" : "Slide"}
                     >
                         <Link to={"/tienda/categorias/" + categorias[(slideIndex - 1)]?.id} onClick={() => { setCategory(categorias[(slideIndex - 1)]?.name)}}>
                             <img alt='' src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} />
@@ -54,7 +54,7 @@ export const Slider = () => {
                 {Array.from({ length: 3 }).map((item, index) => (
                     <div
                         onClick={() => moveDot(index + 1)}
-                        className={slideIndex === index + 1 ? "dot active" : "dot"}
+                        className={slideIndex === index + 1 ? "Dot active" : "Dot"}
                     ></div>
                 ))}
             </div>

@@ -26,13 +26,13 @@ export const ItemDetailContainer = () => {
             })
     }, [productID]);
 
-    if (isLoading || !product) {return <p className="text-center" style={{margin: "19% 0px 19% 0px"}}><Box> <CircularProgress /></Box></p>}
+    if (isLoading || !product) { return <p className="text-center" style={{ minHeight: "352px", height: "auto", marginTop: "270px" }}><Box> <CircularProgress /></Box></p> }
     if (window.innerWidth <= 768) {
         return (
             < Container className=" col-sm-8" id="prueba" >
                 <div className="row" >
                     <div>
-                        <ItemDetail/>
+                        <ItemDetail />
                     </div>
                     <div className=" col-12 my-5">
                         <BLatItemDetail />
@@ -40,7 +40,7 @@ export const ItemDetailContainer = () => {
                     <hr className=" mx-auto" />
                     <div className=" ms-sm-5 mt-3 mb-5">
                         <h5 className="my-3">Descripción:</h5>
-                        <p>{product?.description?.length >= 50 && product.description.slice(0,40)}</p>
+                        <p>{product?.description?.length >= 50 && product.description.slice(0, 40)}</p>
                     </div>
                 </div>
             </Container >
