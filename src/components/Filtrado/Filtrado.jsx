@@ -38,16 +38,16 @@ const Filtrado = () => {
                         <p onClick={() => { setFiltered(productos); setCategory(null) }} key="Sin filtros">Sin filtros</p>
                     </Dropdown.Item>
                     <Dropdown.Item>
-                        <p onClick={() => { handleSort(Number(1)) }} key="A-Z">Alfabeticamente A-Z</p>
+                        <p onClick={() => { handleSort(Number(1)); setCategory(null) }} key="A-Z">Alfabeticamente A-Z</p>
                     </Dropdown.Item>
                     <Dropdown.Item>
-                        <p onClick={() => { handleSort(Number(2)) }} key="Z-A">Alfabeticamente Z-A</p>
+                        <p onClick={() => { handleSort(Number(2)); setCategory(null) }} key="Z-A">Alfabeticamente Z-A</p>
                     </Dropdown.Item>
                     <Dropdown.Item>
-                        <p onClick={() => { handleSort(Number(3)) }} key="MAY-MENOR">Precio Menor-Mayor</p>
+                        <p onClick={() => { handleSort(Number(3)); setCategory(null) }} key="MAY-MENOR">Precio Menor-Mayor</p>
                     </Dropdown.Item>
                     <Dropdown.Item>
-                        <p onClick={() => { handleSort(Number(4)) }} key="MENOR-MAY">Precio Mayor-Menor</p>
+                        <p onClick={() => { handleSort(Number(4)); setCategory(null) }} key="MENOR-MAY">Precio Mayor-Menor</p>
                     </Dropdown.Item>
                     {categorias.map((cats) => (
                         <Dropdown.Item>
