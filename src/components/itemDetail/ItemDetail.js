@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Carousel, Container, Modal, Row  } from "react-bootstrap";
+import { Carousel, Container, Modal, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import { getFirestore } from "../../firebase";
 import "./ItemDetail.css";
@@ -19,14 +19,12 @@ export const MostrarProducto = (prop) => {
         </Modal>
     )
 }
-
 export const ItemDetail = () => {
     const { productID } = useParams();
     const [product, setProduct] = useState({});
     const [selectedImg, setSelectedImg] = useState(null)
     const [active, setActive] = useState(null)
     const [abrir, setAbrir] = useState(false)
-    console.log(product.img)
 
     useEffect(() => {
         const db = getFirestore()
@@ -48,18 +46,20 @@ export const ItemDetail = () => {
         return (
             <>
                 <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} />
-                <Carousel className="w-100">
+                {product.imgsSec ? <Carousel className="w-100">
                     <Carousel.Item>
-                        <img src={product.img} alt={product.id} onClick={() =>{ setAbrir(true);  cambiarImg(product.img)}} />
+                        <img src={product.img} alt={product.id} onClick={() => { setAbrir(true); cambiarImg(product.img) }} />
                     </Carousel.Item>
-                    {product.imgsSec && (product.imgsSec).map((i) => {
+                    {(product.imgsSec).map((i) => {
                         return (
                             <Carousel.Item >
-                                <img src={i} className="img-fluid" alt={i} onClick={() => {setAbrir(true);  cambiarImg(i)}} />
+                                <img src={i} className="img-fluid" alt={i} onClick={() => { setAbrir(true); cambiarImg(i) }} />
                             </Carousel.Item>
                         )
                     })}
-                </Carousel>
+                </Carousel> :
+                    <img src={product.img} alt={product.id} className="img-fluid" onClick={() => { setAbrir(true); cambiarImg(product.img) }} />
+                }
             </>
         )
     } else {
@@ -71,7 +71,6 @@ export const ItemDetail = () => {
                         {product.imgsSec && (product.imgsSec).map((i) => {
                             return (<img src={i} alt={i} className={`mb-3 ${active === i ? "activeIMG" : ""}`} onMouseEnter={() => { cambiarImg(i) }} />)
                         })}
-
                     </div>
                     <MostrarProducto abrir={abrir} cerrar={() => setAbrir(false)} productImg={selectedImg ? selectedImg : product.img} />
                     <div className="col-xxl-11 col-sm-8 text-center my-xxl-4 my-sm-4">

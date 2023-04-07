@@ -34,7 +34,7 @@ export const ItemDetailContainer = () => {
                     <div>
                         <ItemDetail />
                     </div>
-                    <div className=" col-12 my-5">
+                    <div className=" col-12 mt-3">
                         <BLatItemDetail />
                     </div>
                     <hr className=" mx-auto" />
@@ -45,7 +45,6 @@ export const ItemDetailContainer = () => {
                 </div>
             </Container >
         )
-
     } else {
         return (
             <Container className="card col-xxl-8 col-sm-8 my-sm-3 my-xxl-5" id="prueba">
