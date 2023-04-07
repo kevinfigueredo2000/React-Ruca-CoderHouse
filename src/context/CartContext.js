@@ -42,6 +42,7 @@ export const CartProvider = ({ children }) => {
 
     const addItem = (item, quantity) => {
         const itemEnCarrito = cart.find((compra) => compra.item.id === item.id);
+        //SI STOCK > QUANTITY
         if (itemEnCarrito) {
             const actualizarCarrito = cart.map((compra) => {
                 if (compra.item.id === item.id) {

@@ -104,7 +104,7 @@
 }
 
 
-.container-dots {
+.Container-dots {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -121,6 +121,6 @@
   background: #f1f1f1;
 }
 
-.dot.active {
+.Dot.active {
   background: rgb(32, 32, 32);
 }

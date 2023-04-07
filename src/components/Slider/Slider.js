@@ -50,7 +50,7 @@ export const Slider = () => {
             <BtnSlider moveSlide={nextSlide} direction={"next"} className="x" />
             <BtnSlider moveSlide={prevSlide} direction={"prev"} className="x" />
 
-            <div className="container-dots">
+            <div className="Container-dots">
                 {Array.from({ length: 3 }).map((item, index) => (
                     <div
                         onClick={() => moveDot(index + 1)}

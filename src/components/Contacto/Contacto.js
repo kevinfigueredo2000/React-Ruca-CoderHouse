@@ -1,9 +1,7 @@
 import { Container, Row } from "react-bootstrap";
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import "./Contacto.css"
-// import emailjs from "emailjs-com"
-// import { GrMail } from "react-icons/gr";
-import emailjs from '@emailjs/browser';
+import emailjs from "emailjs-com"
 
 export const Contacto = () => {
     const [alertaMensaje, setAlertaMensaje] = useState(true);
@@ -11,64 +9,45 @@ export const Contacto = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
 
-    const form = useRef();
-
     const sendEmail = (e) => {
         e.preventDefault();
         if (name === "" || email === "") {
             setAlertaMensajeError(false);
             setTimeout(() => {
                 setAlertaMensajeError(true);
-            }, 1000)
-        }
-        else {
-            emailjs.sendForm('service_het4gxb', 'template_hdtm9gg', form.current, 'nWo_Xw4wadg0Ssnry')
+            }, 1500)
+        } else {
+            emailjs.sendForm('gmail', 'template_2nq5sgn', e.currentTarget, 'mv7GgMROqQAEVm9eV')
                 .then((result) => {
                     console.log(result.text);
                     setAlertaMensaje(false);
-                    setAlertaMensajeError(true)
                     setTimeout(() => {
                         setAlertaMensaje(true);
-                        alertaMensajeError ? setAlertaMensajeError(true) : setAlertaMensajeError(false)
-                    }, 1000)
-                    setName("")
-                    setEmail("")
+                    }, 3500)
+
                 }, (error) => {
                     console.log(error.text);
+                    setAlertaMensajeError(false);
+                    setTimeout(() => {
+                        setAlertaMensajeError(true);
+                    }, 3500)
                 });
-            e.target.reset();
+            e.currentTarget.reset();
         }
-
-
     };
-    // const [alertaMensaje, setAlertaMensaje] = useState(true);
-    // const form = useRef();
-
-    // function sendEmail(e) {
-    //     e.preventDefault()
-    //     emailjs.sendForm('gmail', 'template_2nq5sgn', e.target, 'mv7GgMROqQAEVm9eV')
-    //         .then((result) => {
-    //             console.log(result.text);
-    //             setAlertaMensaje(false);
-    //         }, (error) => {
-    //             console.log(error.text);
-    //         });
-    //     e.target.reset();
-    // };
     return (
         <main className="contacto" id="contacto">
-            <Container style={{minHeight:"712px", height:"auto"}}>
+            <Container style={{ minHeight: "712px", height: "auto" }}>
                 <h1 className="mb-3 text-center mt-xxl-4 mt-4">Contacto</h1>
                 <Row>
                     <div className="col-xxl-6 col-12 col-sm-6">
                         <h4 className="mt-xxl-3">Contactanos en:</h4>
-                        <p>Escribinos para coordinar unavisita y conocer nuestros productos</p>
-                        <p>Showroom - Rosario, Santa Fe</p>
-                        <p>+54 9 341 3591112</p>
-                        <p>ventas@chemate.com.ar</p>
+                        <p>Buenos Aires, Argentina</p>
+                        <p>+54 1151212682</p>
+                        <p>figueredo.kevin2000@gmail.com</p>
                     </div>
                     <div className="col-xxl-6 col-10 mx-auto col-sm-6">
-                        <form action="" method="POST" ref={form} onSubmit={sendEmail}>
+                        <form action="" method="POST" onSubmit={sendEmail}>
                             <div className="mx-xxl-5 mt-3">
                                 <label for="txtNombre">Nombre</label>
                                 <input type="text" name="txtNombre" id="txtNombre" className="form-control" onChange={(e) => { setName(e.target.value) }} />
