@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom'
 export const Slider = () => {
 
     const [slideIndex, setSlideIndex] = useState(1)
-    const { categorias, setCategory } = useTiendaContext();
+    const { categorias, setCategory, category } = useTiendaContext();
+    console.log(category)
 
     const nextSlide = () => {
         if (slideIndex !== dataSlider.length) {
@@ -41,7 +42,7 @@ export const Slider = () => {
                         key={obj.id}
                         className={slideIndex === index + 1 ? "Slide active-anim" : "Slide"}
                     >
-                        <Link to={"/tienda/categorias/" + categorias[(slideIndex - 1)]?.id} onClick={() => { setCategory(categorias[(slideIndex - 1)]?.name)}}>
+                        <Link to={"tienda"} onClick={() => { setCategory(categorias[(slideIndex - 1)]?.name)}}>
                             <img alt='' src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} />
                         </Link>
                     </div>

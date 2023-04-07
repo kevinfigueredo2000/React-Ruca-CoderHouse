@@ -11,11 +11,13 @@ import { useRef, useState } from "react";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useCart } from "../../context/CartContext.js";
 import { SideCart } from "./SideCart.jsx";
+import { useTiendaContext } from "../../context/TiendaContext.jsx";
 
 function NavBar() {
     const { ubicacionPrincipal, desplazamiento_Actual, setDesplazamiento_Actual, setUbicacionPrincipal } = useAltPag()
     const DivNav = useRef()
     const { handleShowCart, cantidadCarrito } = useCart()
+    const { setCategory, setFiltered, productos } = useTiendaContext();
 
     window.onscroll = function () {
         setDesplazamiento_Actual(window.pageYOffset)
@@ -48,10 +50,10 @@ function NavBar() {
                         </Offcanvas.Header>
                         <div style={{ padding: "0rem 1rem" }}>
                             <li className="nav nav-item my-3">
-                                <Link to="/" activeClassName="active" className="vinculo" id="inicio" onClick={handleClose}>Inicio</Link>
+                                <Link to="/" activeClassName="active" className="vinculo" id="inicio" onClick={()=>{setCategory(null);handleClose(); setFiltered(productos);}}>Inicio</Link>
                             </li><hr />
                             <li className="nav nav-item my-3">
-                                <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda" onClick={handleClose}>Tienda</Link>
+                                <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda" onClick={()=>{handleClose(); setCategory(null); setFiltered(productos);}}>Tienda</Link>
                             </li><hr />
                             <li className="nav nav-item my-3">
                                 <Link to="sobre-nosotros" activeClassName="active" className="vinculo" onClick={handleClose}>Sobre nosotros</Link>
@@ -65,10 +67,10 @@ function NavBar() {
                     <Row className="w-100">
                         <ul id="ulNav" className="col-xxl-10 col-sm-10">
                             <li className="nav-item col-sm-1 col-xxl-1 my-auto  me-xxl-1">
-                                <Link to="/" activeClassName="active" className="vinculo" id="inicio">Inicio</Link>
+                                <Link to="/" activeClassName="active" className="vinculo" id="inicio" onClick={()=>{setCategory(null); setFiltered(productos);}}>Inicio</Link>
                             </li>
                             <li className="nav-item col-sm-1 col-xxl-1 my-auto me-xxl-1">
-                                <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda">Tienda</Link>
+                                <Link to={"tienda"} activeClassName="active" className="vinculo" id="tienda" onClick={()=>{setCategory(null); setFiltered(productos);}}>Tienda</Link>
                             </li>
                             <li className="nav-item col-sm-2 ms-sm-4 me-sm-0 ms-xxl-0 col-xxl-1 my-auto me-xxl-5">
                                 <Link to="sobre-nosotros" activeClassName="active" className="vinculo">Sobre nosotros</Link>

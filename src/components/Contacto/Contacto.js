@@ -77,7 +77,7 @@ export const Contacto = () => {
                                 </div>
                             </div>
                             <div className="d-flex flex-row justify-content-end mt-3 me-xxl-5 mb-3">
-                                <button type="submit">Enviar</button>
+                                <button type="submit" className="btn btn-primary">Enviar</button>
                             </div>
                         </form>
                     </div>
