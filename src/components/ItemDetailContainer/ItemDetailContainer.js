@@ -40,7 +40,7 @@ export const ItemDetailContainer = () => {
                     <hr className=" mx-auto" />
                     <div className=" ms-sm-5 mt-3 mb-5">
                         <h5 className="my-3">Descripción:</h5>
-                        <p>{product?.description?.length >= 50 && product.description.slice(0, 40)}</p>
+                        <p>{product?.description?.length >= 50 && product.description.slice(0, -1)}</p>
                     </div>
                 </div>
             </Container >
