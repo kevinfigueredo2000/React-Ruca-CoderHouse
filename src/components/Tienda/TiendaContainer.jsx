@@ -6,7 +6,6 @@ import { useTiendaContext } from "../../context/TiendaContext";
 
 const TiendaContainer = () => {
     const { category } = useTiendaContext()
-    console.log(category + "tienda")
     return (
         <Container style={{ minHeight: "736px", height: "auto" }}>
             <Row>

@@ -80,7 +80,12 @@ export const TiendaContextProvider = ({ children }) => {
         }
     }
 
-
+    function filtrar(prop) {
+        const result = (productos).filter((pr) => {
+            return pr.category.includes(prop.name)
+        })
+        setFiltered(result)
+    }
 
 
     return (
@@ -93,7 +98,8 @@ export const TiendaContextProvider = ({ children }) => {
             setProductos,
             setCategory,
             category,
-            handleSort
+            handleSort,
+            filtrar
         }}>
             {children}
         </TiendaContext.Provider>

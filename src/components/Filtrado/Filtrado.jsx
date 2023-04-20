@@ -5,7 +5,7 @@ import { Search } from "react-bootstrap-icons";
 import { InputGroupText } from "reactstrap";
 
 const Filtrado = () => {
-    const { categorias, setCategory, setFiltered, productos, handleSort } = useTiendaContext();
+    const { categorias, setCategory, setFiltered, productos, handleSort, filtrar } = useTiendaContext();
 
     function buscador(e) {
         const result = (productos).filter((pr) => {
@@ -13,12 +13,7 @@ const Filtrado = () => {
         })
         setFiltered(result)
     }
-    function filtrar(prop) {
-        const result = (productos).filter((pr) => {
-            return pr.category.includes(prop.name)
-        })
-        setFiltered(result)
-    }
+    
     return (
         <>
             <div className="nav-item col-sm-3 m-auto" id="busqueda">
